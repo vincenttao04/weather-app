@@ -6,10 +6,13 @@ A simple weather app built with React that allows users to check the current wea
 
 - 'Enter' button functionality into search bar
 - List respective country
-- Add error messages into the app ui
+- Add error messages into the app ui, remove alert messages
 - Clear search bar after successful search
 - Improve search bar aesthetic
 - Update radius of components
+- Remove feature where weather data is hidden if invalid/no city search
+- Weather.jsx - clean code for allIcons
+- Disable search bar button if no search bar text input
 
 **Big Improvement Ideas:**
 

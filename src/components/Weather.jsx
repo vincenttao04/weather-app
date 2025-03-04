@@ -35,11 +35,13 @@ const Weather = () => {
   };
 
   const search = async (city) => {
+    // Checks search bar input
     if (city === "") {
       alert("Enter City Name");
       return;
     }
 
+    // Checks OpenWeather API key validity
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
         import.meta.env.VITE_APP_ID
@@ -48,6 +50,7 @@ const Weather = () => {
       const response = await fetch(url);
       const data = await response.json();
 
+      // Checks city validity
       if (!response.ok) {
         alert("City Not Found");
         return;
@@ -64,15 +67,16 @@ const Weather = () => {
         location: data.name,
         icon: icon,
       });
-    } catch (error) {
+    } catch {
       setWeatherData(false);
       console.error("Error in fetching weather data");
     }
   };
 
+  // Initial city search when loading weather app.
   useEffect(() => {
-    search("Singapore");
-  }, []);
+    search("Auckland");
+  });
 
   return (
     <div className="weather">
