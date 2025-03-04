@@ -45,6 +45,7 @@ const Weather = () => {
       console.log(data);
 
       const icon = allIcons[data.weather[0].icon] || clear_icon;
+
       setWeatherData({
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
@@ -56,7 +57,7 @@ const Weather = () => {
   };
 
   useEffect(() => {
-    search("London");
+    search("New York");
   }, []);
 
   return (
@@ -65,21 +66,21 @@ const Weather = () => {
         <input type="text" placeholder="Search" />
         <img src={search_icon} alt="" />
       </div>
-      <img src={clear_icon} alt="" className="weather-icon" />
-      <p className="temperature">16°C</p>
-      <p className="location">Auckland</p>
+      <img src={weatherData.icon} alt="" className="weather-icon" />
+      <p className="temperature">{weatherData.temperature}°C</p>
+      <p className="location">{weatherData.location}</p>
       <div className="weather-data">
         <div className="col">
           <img src={humidity_icon} alt="" />
           <div>
-            <p>91 %</p>
+            <p>{weatherData.humidity} %</p>
             <span>Humidity</span>
           </div>
         </div>
         <div className="col">
           <img src={wind_icon} alt="" />
           <div>
-            <p>10.0 km/h</p>
+            <p>{weatherData.windSpeed} km/h</p>
             <span>Wind Speed</span>
           </div>
         </div>
