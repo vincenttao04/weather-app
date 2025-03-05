@@ -21,3 +21,6 @@ A simple weather app built with React that allows users to check the current wea
 - Add in weekly weather forecast (check Figma)
 - Button to expand weather chip to show more/less details
 - Auto update/refresh weather details (add last udpated label)
+- AI-generated weather summary / clothing recommendations (text-based)
+- Unit, component, integration testing
+- Autocomplete dropdown for search bar (Google Places API?)
