@@ -46,7 +46,7 @@ npm run dev
 - Disable search bar button if no search bar text input
 - Update README with instructions ✔️
 - Remove .env file / fix API key leak ✔️
-- Fix weather card size / stop dynamic size changes
+- Fix weather card size / stop dynamic size changes ✔️
 
 #### Big Ideas:
 

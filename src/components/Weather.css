@@ -4,6 +4,8 @@
   border-radius: 10px;
   background-image: linear-gradient(45deg, #2f4680, #500ae4);
   display: flex;
+  width: 400px;
+  height: 647.2px;
   flex-direction: column;
   align-items: center;
 }
@@ -21,6 +23,7 @@
   outline: none;
   border-radius: 40px;
   padding-left: 25px;
+  padding-right: 25px;
   color: #626262;
   background: #ebfffc;
   font-size: 18 px;
@@ -36,7 +39,7 @@
 }
 
 .weather-icon {
-  width: 150px;
+  width: 220px;
   margin: 30px 0;
 }
 

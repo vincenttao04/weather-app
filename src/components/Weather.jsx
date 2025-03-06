@@ -52,7 +52,8 @@ const Weather = () => {
 
       // Checks city validity
       if (!response.ok) {
-        alert(data.message);
+        alert("Error. See console for more details");
+        console.log(data.message);
         return;
       }
 
