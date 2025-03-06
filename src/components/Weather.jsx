@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Weather.css";
 import humidity_icon from "../assets/humidity.png";
 import search_icon from "../assets/search.png";
-import { weatherIcons } from "../config/icons.js";
+import weatherIcons from "../config/icons.js";
 import wind_icon from "../assets/wind.png";
 
 const Weather = () => {
@@ -55,7 +55,7 @@ const Weather = () => {
   if (!weatherData)
     return (
       <div className="error-display">
-        <p>Error. See console for more details</p>
+        <p></p>
       </div>
     );
 
@@ -68,6 +68,11 @@ const Weather = () => {
           placeholder="Search"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" && inputValue.trim() !== "") {
+              search(inputValue);
+            }
+          }}
         />
         <img
           src={search_icon}

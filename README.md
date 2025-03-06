@@ -35,8 +35,7 @@ npm run dev
 
 #### Small Ideas:
 
-- 'Enter' button functionality into search bar
-- List respective country
+- ✔️ 'Enter' button functionality into search bar
 - Add error messages into the app ui, remove alert messages
 - ✔️ Clear search bar after successful search
 - Improve search bar aesthetic/ change search img to be within the search bar (?)
@@ -52,6 +51,7 @@ npm run dev
 #### Big Ideas:
 
 - Change background depending on day/night
+- Add visibility / cloud coverage metrics to weather card (test on Figma)
 - Add more/animate weather icons
 - Add in weekly weather forecast (check Figma)
 - Button to expand weather chip to show more/less details
