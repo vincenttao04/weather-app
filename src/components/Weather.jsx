@@ -11,7 +11,8 @@ import wind_icon from "../assets/wind.png";
 
 const Weather = () => {
   const inputRef = useRef();
-  const [weatherData, setWeatherData] = useState(false);
+  const [weatherData, setWeatherData] = useState(null);
+  const [inputValue, setInputValue] = useState("");
 
   const allIcons = {
     "01d": clear_icon,
@@ -35,12 +36,6 @@ const Weather = () => {
   };
 
   const search = async (city) => {
-    // Checks search bar input
-    if (city === "") {
-      alert("Enter City Name");
-      return;
-    }
-
     // Checks OpenWeather API key validity
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
@@ -79,42 +74,51 @@ const Weather = () => {
     search("Auckland");
   }, []);
 
+  if (!weatherData)
+    return (
+      <div className="error-display">
+        <p>Error. See console for more details</p>
+      </div>
+    );
+
   return (
     <div className="weather">
       <div className="search-bar">
-        <input ref={inputRef} type="text" placeholder="Search" />
+        <input
+          ref={inputRef}
+          type="text"
+          placeholder="Search"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
         <img
           src={search_icon}
           alt=""
-          onClick={() => search(inputRef.current.value)}
+          onClick={() => {
+            if (inputValue) search(inputValue);
+          }}
+          className={inputValue === "" ? "disabled" : ""}
         />
       </div>
-
-      {weatherData ? (
-        <>
-          <img src={weatherData.icon} alt="" className="weather-icon" />
-          <p className="temperature">{weatherData.temperature}°C</p>
-          <p className="location">{weatherData.location}</p>
-          <div className="weather-data">
-            <div className="col">
-              <img src={humidity_icon} alt="" />
-              <div>
-                <p>{weatherData.humidity} %</p>
-                <span>Humidity</span>
-              </div>
-            </div>
-            <div className="col">
-              <img src={wind_icon} alt="" />
-              <div>
-                <p>{weatherData.windSpeed} km/h</p>
-                <span>Wind Speed</span>
-              </div>
-            </div>
+      <img src={weatherData.icon} alt="" className="weather-icon" />
+      <p className="temperature">{weatherData.temperature}°C</p>
+      <p className="location">{weatherData.location}</p>
+      <div className="weather-data">
+        <div className="col">
+          <img src={humidity_icon} alt="" />
+          <div>
+            <p>{weatherData.humidity} %</p>
+            <span>Humidity</span>
           </div>
-        </>
-      ) : (
-        <></>
-      )}
+        </div>
+        <div className="col">
+          <img src={wind_icon} alt="" />
+          <div>
+            <p>{weatherData.windSpeed} km/h</p>
+            <span>Wind Speed</span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

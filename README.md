@@ -47,6 +47,7 @@ npm run dev
 - Update README with instructions ✔️
 - Remove .env file / fix API key leak ✔️
 - Fix weather card size / stop dynamic size changes ✔️
+- Clear search bar after each successful search
 
 #### Big Ideas:
 
