@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Weather.css";
-import search_icon from "../assets/search.png";
 import humidity_icon from "../assets/humidity.png";
+import search_icon from "../assets/search.png";
+import { weatherIcons } from "../config/icons.js";
 import wind_icon from "../assets/wind.png";
-import { weatherIcons } from "../config/icons";
 
 const Weather = () => {
   const inputRef = useRef();
