@@ -44,7 +44,9 @@ npm run dev
 - Remove feature where weather data is hidden if invalid/no city search
 - Weather.jsx - clean code for allIcons
 - Disable search bar button if no search bar text input
-- Update README with instructions
+- Update README with instructions ✔️
+- Remove .env file / fix API key leak ✔️
+- Fix weather card size / stop dynamic size changes
 
 #### Big Ideas:
 

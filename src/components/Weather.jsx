@@ -44,7 +44,7 @@ const Weather = () => {
     // Checks OpenWeather API key validity
     try {
       const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
-        import.meta.env.VITE_APP_ID
+        import.meta.env.VITE_API_KEY
       }`;
 
       const response = await fetch(url);
@@ -52,7 +52,7 @@ const Weather = () => {
 
       // Checks city validity
       if (!response.ok) {
-        alert("City Not Found");
+        alert(data.message);
         return;
       }
 
@@ -76,7 +76,7 @@ const Weather = () => {
   // Initial city search when loading weather app.
   useEffect(() => {
     search("Auckland");
-  });
+  }, []);
 
   return (
     <div className="weather">
