@@ -38,7 +38,7 @@ npm run dev
 - ✔️ 'Enter' button functionality into search bar
 - Add error messages into the app ui, remove alert messages
 - ✔️ Clear search bar after successful search
-- Improve search bar aesthetic/ change search img to be within the search bar (?)
+- ✔️ Improve search bar aesthetic/ change search img to be within the search bar (?)
 - ✔️ Update radius of components
 - Remove feature where weather data is hidden if invalid/no city search
 - ✔️ Weather.jsx - clean code for allIcons

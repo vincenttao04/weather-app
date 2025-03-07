@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Weather.css";
 import humidity_icon from "../assets/humidity.png";
-import search_icon from "../assets/search.png";
+import search_icon2 from "../assets/search2.png";
 import weatherIcons from "../config/icons.js";
 import wind_icon from "../assets/wind.png";
 
@@ -60,7 +60,28 @@ const Weather = () => {
     );
 
   return (
-    <div className="weather">
+    <div className="root-container">
+      <div className="weather">
+        <img src={weatherData.icon} alt="" className="weather-icon" />
+        <p className="temperature">{weatherData.temperature}°C</p>
+        <p className="location">{weatherData.location}</p>
+        <div className="weather-data">
+          <div className="col">
+            <img src={humidity_icon} alt="" />
+            <div>
+              <p>{weatherData.humidity} %</p>
+              <span>Humidity</span>
+            </div>
+          </div>
+          <div className="col">
+            <img src={wind_icon} alt="" />
+            <div>
+              <p>{weatherData.windSpeed} km/h</p>
+              <span>Wind Speed</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="search-bar">
         <input
           ref={inputRef}
@@ -75,32 +96,13 @@ const Weather = () => {
           }}
         />
         <img
-          src={search_icon}
+          src={search_icon2}
           alt=""
           onClick={() => {
             if (inputValue) search(inputValue);
           }}
           className={inputValue === "" ? "disabled" : ""}
         />
-      </div>
-      <img src={weatherData.icon} alt="" className="weather-icon" />
-      <p className="temperature">{weatherData.temperature}°C</p>
-      <p className="location">{weatherData.location}</p>
-      <div className="weather-data">
-        <div className="col">
-          <img src={humidity_icon} alt="" />
-          <div>
-            <p>{weatherData.humidity} %</p>
-            <span>Humidity</span>
-          </div>
-        </div>
-        <div className="col">
-          <img src={wind_icon} alt="" />
-          <div>
-            <p>{weatherData.windSpeed} km/h</p>
-            <span>Wind Speed</span>
-          </div>
-        </div>
       </div>
     </div>
   );
