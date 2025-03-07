@@ -58,11 +58,16 @@
   color: #fff;
   font-size: 80px;
   line-height: 1;
+  font-weight: 700;
 }
 
 .location {
   color: #fff;
-  font-size: 40px;
+  font-size: 35px; /* Shrinks if needed */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .weather-data {
@@ -76,9 +81,9 @@
 
 .weather-data .col {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 12px;
-  font-size: 22px;
+  font-size: 21px;
 }
 
 .weather-data .col span {
@@ -89,5 +94,4 @@
 
 .weather-data .col img {
   width: 26px;
-  margin-top: 10px;
 }

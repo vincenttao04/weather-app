@@ -51,7 +51,7 @@ npm run dev
 #### Big Ideas:
 
 - Change background depending on day/night
-- Add visibility / cloud coverage metrics to weather card (test on Figma)
+- Add visibility / cloud coverage / precipitation metrics to weather card (test on Figma)
 - Add more/animate weather icons
 - Add in weekly weather forecast (check Figma)
 - Button to expand weather chip to show more/less details
