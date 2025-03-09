@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { fetchWeather } from "../services/weatherApiService.js";
 import "../styles/Weather.css";
-// import humidity_icon from "../assets/humidity.png";
 import search_icon2 from "../assets/search2.png";
 import weatherIcons from "../utils/weatherIcons.js";
-// import wind_icon from "../assets/wind.png";
 import WeatherData from "./WeatherData.jsx";
 
 const Weather = () => {
@@ -16,7 +14,6 @@ const Weather = () => {
     // calls openweather api
     const data = await fetchWeather(city);
 
-    // add check for api validity, incase api isn't working properly , etc.
     if (data !== null) {
       console.log(data);
       const icon = weatherIcons[data.weather[0].icon] || weatherIcons["01d"];
@@ -37,13 +34,6 @@ const Weather = () => {
   useEffect(() => {
     search("Auckland");
   }, []);
-
-  // if (!weatherData)
-  //   return (
-  //     <div className="error-display">
-  //       <p>hi</p>
-  //     </div>
-  //   );
 
   return (
     <div className="root-container">
