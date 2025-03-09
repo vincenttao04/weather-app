@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { fetchWeather } from "../services/weatherApiService.js";
 import "../styles/Weather.css";
-import humidity_icon from "../assets/humidity.png";
+// import humidity_icon from "../assets/humidity.png";
 import search_icon2 from "../assets/search2.png";
 import weatherIcons from "../utils/weatherIcons.js";
-import wind_icon from "../assets/wind.png";
+// import wind_icon from "../assets/wind.png";
+import WeatherData from "./WeatherData.jsx";
 
 const Weather = () => {
   const inputRef = useRef();
@@ -47,32 +48,7 @@ const Weather = () => {
   return (
     <div className="root-container">
       <div className="weather">
-        {weatherData ? (
-          <>
-            {" "}
-            <img src={weatherData.icon} alt="" className="weather-icon" />
-            <p className="temperature">{weatherData.temperature}°C</p>
-            <p className="location">{weatherData.location}</p>
-            <div className="weather-data">
-              <div className="col">
-                <img src={humidity_icon} alt="" />
-                <div>
-                  <p>{weatherData.humidity} %</p>
-                  <span>Humidity</span>
-                </div>
-              </div>
-              <div className="col">
-                <img src={wind_icon} alt="" />
-                <div>
-                  <p>{weatherData.windSpeed} km/h</p>
-                  <span>Wind Speed</span>
-                </div>
-              </div>
-            </div>
-          </>
-        ) : (
-          <></>
-        )}
+        {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
       </div>
       <div className="search-bar">
         <input
