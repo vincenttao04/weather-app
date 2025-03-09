@@ -36,11 +36,11 @@ npm run dev
 #### Small Ideas:
 
 - ✔️ 'Enter' button functionality into search bar
-- Add error messages into the app ui, remove alert messages
+- ✔️ Add error messages into the app ui, remove alert messages
 - ✔️ Clear search bar after successful search
 - ✔️ Improve search bar aesthetic/ change search img to be within the search bar (?)
 - ✔️ Update radius of components
-- Remove feature where weather data is hidden if invalid/no city search
+- ✔️ Remove feature where weather data is hidden if invalid/no city search
 - ✔️ Weather.jsx - clean code for allIcons
 - ✔️ Disable search bar button if no search bar text input
 - ✔️ Update README with instructions

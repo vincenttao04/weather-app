@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./Weather.css";
+import { fetchWeather } from "../services/weatherApiService.js";
+import "../styles/Weather.css";
 import humidity_icon from "../assets/humidity.png";
 import search_icon2 from "../assets/search2.png";
-import weatherIcons from "../config/icons.js";
+import weatherIcons from "../utils/weatherIcons.js";
 import wind_icon from "../assets/wind.png";
 
 const Weather = () => {
@@ -11,26 +12,13 @@ const Weather = () => {
   const [inputValue, setInputValue] = useState("");
 
   const search = async (city) => {
-    // Checks OpenWeather API key validity
-    try {
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${
-        import.meta.env.VITE_API_KEY
-      }`;
+    // calls openweather api
+    const data = await fetchWeather(city);
 
-      const response = await fetch(url);
-      const data = await response.json();
-
-      // Checks city validity
-      if (!response.ok) {
-        alert("Error. See console for more details");
-        console.log(data.message);
-        return;
-      }
-
+    // add check for api validity, incase api isn't working properly , etc.
+    if (data !== null) {
       console.log(data);
-
       const icon = weatherIcons[data.weather[0].icon] || weatherIcons["01d"];
-
       setWeatherData({
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
@@ -38,13 +26,10 @@ const Weather = () => {
         location: data.name,
         icon: icon,
       });
-
-      // Reset input field to empty string after a successful search
-      setInputValue("");
-    } catch {
-      setWeatherData(false);
-      console.error("Error in fetching weather data");
     }
+
+    // Reset input field to empty string after a successful search
+    setInputValue("");
   };
 
   // Initial city search when loading weather app.
@@ -52,35 +37,42 @@ const Weather = () => {
     search("Auckland");
   }, []);
 
-  if (!weatherData)
-    return (
-      <div className="error-display">
-        <p></p>
-      </div>
-    );
+  // if (!weatherData)
+  //   return (
+  //     <div className="error-display">
+  //       <p>hi</p>
+  //     </div>
+  //   );
 
   return (
     <div className="root-container">
       <div className="weather">
-        <img src={weatherData.icon} alt="" className="weather-icon" />
-        <p className="temperature">{weatherData.temperature}°C</p>
-        <p className="location">{weatherData.location}</p>
-        <div className="weather-data">
-          <div className="col">
-            <img src={humidity_icon} alt="" />
-            <div>
-              <p>{weatherData.humidity} %</p>
-              <span>Humidity</span>
+        {weatherData ? (
+          <>
+            {" "}
+            <img src={weatherData.icon} alt="" className="weather-icon" />
+            <p className="temperature">{weatherData.temperature}°C</p>
+            <p className="location">{weatherData.location}</p>
+            <div className="weather-data">
+              <div className="col">
+                <img src={humidity_icon} alt="" />
+                <div>
+                  <p>{weatherData.humidity} %</p>
+                  <span>Humidity</span>
+                </div>
+              </div>
+              <div className="col">
+                <img src={wind_icon} alt="" />
+                <div>
+                  <p>{weatherData.windSpeed} km/h</p>
+                  <span>Wind Speed</span>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="col">
-            <img src={wind_icon} alt="" />
-            <div>
-              <p>{weatherData.windSpeed} km/h</p>
-              <span>Wind Speed</span>
-            </div>
-          </div>
-        </div>
+          </>
+        ) : (
+          <></>
+        )}
       </div>
       <div className="search-bar">
         <input
