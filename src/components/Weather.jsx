@@ -1,12 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { fetchWeather } from "../services/weatherApiService.js";
 import "../styles/Weather.css";
-import search_icon2 from "../assets/search2.png";
 import weatherIcons from "../utils/weatherIcons.js";
 import WeatherData from "./WeatherData.jsx";
+import SearchBar from "./SearchBar.jsx";
 
 const Weather = () => {
-  const inputRef = useRef();
   const [weatherData, setWeatherData] = useState(null);
   const [inputValue, setInputValue] = useState("");
 
@@ -16,7 +15,7 @@ const Weather = () => {
 
     if (data !== null) {
       console.log(data);
-      const icon = weatherIcons[data.weather[0].icon] || weatherIcons["01d"];
+      const icon = weatherIcons[data?.weather[0]?.icon] || weatherIcons["01d"];
       setWeatherData({
         humidity: data.main.humidity,
         windSpeed: data.wind.speed,
@@ -40,28 +39,11 @@ const Weather = () => {
       <div className="weather">
         {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
       </div>
-      <div className="search-bar">
-        <input
-          ref={inputRef}
-          type="text"
-          placeholder="Search"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" && inputValue.trim() !== "") {
-              search(inputValue);
-            }
-          }}
-        />
-        <img
-          src={search_icon2}
-          alt=""
-          onClick={() => {
-            if (inputValue) search(inputValue);
-          }}
-          className={inputValue === "" ? "disabled" : ""}
-        />
-      </div>
+      <SearchBar
+        inputValue={inputValue}
+        setInputValue={setInputValue}
+        search={search}
+      />
     </div>
   );
 };
