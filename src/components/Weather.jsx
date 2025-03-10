@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { fetchWeather } from "../services/weatherApiService.js";
-import "../styles/Weather.css";
+import "../styles/weather.css";
 import weatherIcons from "../utils/weatherIcons.js";
 import WeatherData from "./WeatherData.jsx";
 import SearchBar from "./SearchBar.jsx";
@@ -36,8 +36,16 @@ const Weather = () => {
 
   return (
     <div className="root-container">
-      <div className="weather">
-        {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
+      <div className="weather-wrapper">
+        <div className="weather">
+          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
+        </div>
+        <div className="weather">
+          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
+        </div>
+        <div className="weather">
+          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
+        </div>
       </div>
       <SearchBar
         inputValue={inputValue}

@@ -1,6 +1,7 @@
 import React from "react";
 import humidity_icon from "../assets/humidity.png";
 import wind_icon from "../assets/wind.png";
+import "../styles/weather-data.css";
 
 const WeatherData = ({ weatherData }) => {
   return (

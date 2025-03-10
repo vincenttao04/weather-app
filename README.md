@@ -59,4 +59,4 @@ npm run dev
 - AI-generated weather summary / clothing recommendations (text-based)
 - Unit, component, integration testing
 - Autocomplete dropdown for search bar (Google Places API?)
-- Refactor code
+- ✔️ Refactor code
