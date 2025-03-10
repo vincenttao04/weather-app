@@ -6,9 +6,6 @@
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
-/* h1 {
-  font-weight: 800;
-} */
 .app {
   min-height: 100vh;
   display: grid;

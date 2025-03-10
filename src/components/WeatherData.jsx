@@ -8,7 +8,7 @@ const WeatherData = ({ weatherData }) => {
     <>
       <img src={weatherData.icon} alt="Weather Icon" className="weather-icon" />
       <p className="temperature">{weatherData.temperature}°C</p>
-      <p className="location">{weatherData.location}</p>
+      <p className="date">{weatherData.location}</p>
       <div className="weather-data">
         <div className="col">
           <img src={humidity_icon} alt="Humidity Icon" />

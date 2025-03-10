@@ -1,8 +1,5 @@
 .search-bar {
-  display: flex;
   position: relative;
-  justify-content: center;
-  margin-top: 15px;
   width: 210px;
 }
 

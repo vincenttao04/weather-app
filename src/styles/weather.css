@@ -4,26 +4,31 @@
   align-items: center;
   height: 100vh;
   width: 100%;
-  flex-direction: column; /* Stack elements vertically */
-  gap: 20px; /* Add gap between weather cards and search bar */
+  flex-direction: column;
+  gap: 20px;
   padding: 20px;
 }
 
 .weather-wrapper {
   display: flex;
-  justify-content: space-between; /* Space out the cards evenly */
-  gap: 20px; /* Space between the weather cards */
-  width: 100%; /* Make the wrapper take full width */
-  max-width: 1300px; /* Optional: limit the max width of the weather cards container */
+  justify-content: space-between;
+  width: 1180px;
 }
 
 .weather {
-  padding: 40px;
-  border-radius: 65px;
+  padding: 42px;
+  border-radius: 25px;
   background-image: linear-gradient(45deg, #2f4680, #500ae4);
   display: flex;
-  width: 400px;
-  height: 565.6px;
+  width: 350px;
+  height: 494.9px;
   flex-direction: column;
   align-items: center;
+}
+
+.location {
+  color: #ececec;
+  font-size: 20px;
+  font-weight: 800;
+  margin-top: 10px;
 }

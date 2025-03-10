@@ -47,6 +47,9 @@ const Weather = () => {
           {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
         </div>
       </div>
+      <div className="location">
+        {weatherData ? <p>{weatherData.location}</p> : <></>}
+      </div>
       <SearchBar
         inputValue={inputValue}
         setInputValue={setInputValue}
