@@ -4,7 +4,7 @@ export const fetchWeather = async (city) => {
     //   import.meta.env.VITE_API_KEY
     // }`;
 
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=10&appid=${
+    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=17&appid=${
       import.meta.env.VITE_API_KEY
     }`;
 
