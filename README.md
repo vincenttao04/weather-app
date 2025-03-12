@@ -60,3 +60,4 @@ npm run dev
 - Unit, component, integration testing
 - Autocomplete dropdown for search bar (Google Places API?)
 - ✔️ Refactor code
+- Add voice input option for searching

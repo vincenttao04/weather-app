@@ -6,7 +6,9 @@ import WeatherData from "./WeatherData.jsx";
 import SearchBar from "./SearchBar.jsx";
 
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherDataOne, setWeatherDataOne] = useState(null);
+  const [weatherDataTwo, setWeatherDataTwo] = useState(null);
+  const [weatherDataThree, setWeatherDataThree] = useState(null);
   const [inputValue, setInputValue] = useState("");
 
   const search = async (city) => {
@@ -15,13 +17,36 @@ const Weather = () => {
 
     if (data !== null) {
       console.log(data);
-      const icon = weatherIcons[data?.weather[0]?.icon] || weatherIcons["01d"];
-      setWeatherData({
-        humidity: data.main.humidity,
-        windSpeed: data.wind.speed,
-        temperature: Math.round(data.main.temp),
-        location: data.name,
-        icon: icon,
+      const iconOne =
+        weatherIcons[data?.list[0]?.weather[0]?.icon] || weatherIcons["01d"];
+
+      const iconTwo =
+        weatherIcons[data?.list[2]?.weather[2]?.icon] || weatherIcons["01d"];
+      const iconThree =
+        weatherIcons[data?.list[3]?.weather[3]?.icon] || weatherIcons["01d"];
+
+      setWeatherDataOne({
+        humidity: data.list[0].main.humidity,
+        windSpeed: data.list[0].wind.speed,
+        temperature: Math.round(data.list[0].main.temp),
+        location: data.city.name,
+        icon: iconOne,
+      });
+
+      setWeatherDataTwo({
+        humidity: data.list[1].main.humidity,
+        windSpeed: data.list[1].wind.speed,
+        temperature: Math.round(data.list[1].main.temp),
+        location: data.city.name,
+        icon: iconTwo,
+      });
+
+      setWeatherDataThree({
+        humidity: data.list[2].main.humidity,
+        windSpeed: data.list[2].wind.speed,
+        temperature: Math.round(data.list[2].main.temp),
+        location: data.city.name,
+        icon: iconThree,
       });
     }
 
@@ -38,17 +63,29 @@ const Weather = () => {
     <div className="root-container">
       <div className="weather-wrapper">
         <div className="weather">
-          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
+          {weatherDataOne ? (
+            <WeatherData weatherData={weatherDataOne} />
+          ) : (
+            <></>
+          )}
         </div>
         <div className="weather">
-          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
+          {weatherDataTwo ? (
+            <WeatherData weatherData={weatherDataTwo} />
+          ) : (
+            <></>
+          )}
         </div>
         <div className="weather">
-          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
+          {weatherDataThree ? (
+            <WeatherData weatherData={weatherDataThree} />
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       <div className="location">
-        {weatherData ? <p>{weatherData.location}</p> : <></>}
+        {weatherDataOne ? <p>{weatherDataOne.location}</p> : <></>}
       </div>
       <SearchBar
         inputValue={inputValue}
