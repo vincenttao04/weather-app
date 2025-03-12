@@ -4,26 +4,30 @@ import "../styles/weather.css";
 import weatherIcons from "../utils/weatherIcons.js";
 import WeatherData from "./WeatherData.jsx";
 import SearchBar from "./SearchBar.jsx";
+import moment from "moment";
 
 const Weather = () => {
-  const [weatherData, setWeatherData] = useState(null);
+  const [weatherData, setWeatherData] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
   const search = async (city) => {
-    // calls openweather api
+    // Calls openweather api
     const data = await fetchWeather(city);
 
-    if (data !== null) {
-      console.log(data);
-      const icon = weatherIcons[data?.weather[0]?.icon] || weatherIcons["01d"];
-      setWeatherData({
-        humidity: data.main.humidity,
-        windSpeed: data.wind.speed,
-        temperature: Math.round(data.main.temp),
-        location: data.name,
-        icon: icon,
-      });
-    }
+    if (!data) return;
+
+    const forecastIndexes = [0, 8, 16]; // Current day, tomorrow, 2 days from now
+    const formattedData = forecastIndexes.map((index) => ({
+      humidity: data.list[index]?.main.humidity,
+      windSpeed: data.list[index]?.wind.speed,
+      temperature: Math.round(data.list[index]?.main.temp),
+      location: data.city.name,
+      icon:
+        weatherIcons[data.list[index]?.weather[0]?.icon] || weatherIcons["01d"],
+      date: moment.unix(data.list[index]?.dt).format("dddd D MMMM"),
+    }));
+
+    setWeatherData(formattedData);
 
     // Reset input field to empty string after a successful search
     setInputValue("");
@@ -37,19 +41,17 @@ const Weather = () => {
   return (
     <div className="root-container">
       <div className="weather-wrapper">
-        <div className="weather">
-          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
-        </div>
-        <div className="weather">
-          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
-        </div>
-        <div className="weather">
-          {weatherData ? <WeatherData weatherData={weatherData} /> : <></>}
-        </div>
+        {weatherData.map((data, index) => (
+          <div className="weather" key={index}>
+            <WeatherData weatherData={data} />
+          </div>
+        ))}
       </div>
-      <div className="location">
-        {weatherData ? <p>{weatherData.location}</p> : <></>}
-      </div>
+      {weatherData.length > 0 && (
+        <div className="location">
+          <p>{weatherData[0].location}</p>
+        </div>
+      )}
       <SearchBar
         inputValue={inputValue}
         setInputValue={setInputValue}
