@@ -53,7 +53,7 @@ npm run dev
 - Change background depending on day/night
 - Add visibility / cloud coverage / precipitation metrics to weather card (test on Figma)
 - Add more/animate weather icons
-- Add in weekly weather forecast (check Figma)
+- ✔️ Add in 3 day weather forecast (check Figma)
 - Button to expand weather chip to show more/less details
 - Auto update/refresh weather details (add last udpated label)
 - AI-generated weather summary / clothing recommendations (text-based)

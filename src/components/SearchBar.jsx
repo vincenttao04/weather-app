@@ -1,5 +1,5 @@
 import React from "react";
-import search_icon2 from "../assets/search2.png";
+import search_icon from "../assets/search.png";
 import "../styles/search-bar.css";
 
 function SearchBar({ inputValue, setInputValue, search }) {
@@ -17,7 +17,7 @@ function SearchBar({ inputValue, setInputValue, search }) {
         }}
       />
       <img
-        src={search_icon2}
+        src={search_icon}
         alt="Search Icon"
         onClick={() => {
           if (inputValue) search(inputValue);
