@@ -1,6 +1,10 @@
 # Simple React Weather App
 
-A simple weather app built with React that allows users to check the current weather of any city.
+A simple weather app built with React that allows users to check the 3 day weather forecast of any city.
+
+Features:
+
+- Voice input search functionality (coming soon)
 
 ## Installation & Setup
 
@@ -47,15 +51,15 @@ npm run dev
 - ✔️ Remove .env file / fix API key leak
 - ✔️ Fix weather card size / stop dynamic size changes
 - Flexible text size incase of long text
+- Make weather icon sizes consistent with each other
 
 #### Big Ideas:
 
 - Change background depending on day/night
 - Add visibility / cloud coverage / precipitation metrics to weather card (test on Figma)
-- Add more/animate weather icons
+- ✔️ Add more weather icons
 - ✔️ Add in 3 day weather forecast (check Figma)
 - Button to expand weather chip to show more/less details
-- Auto update/refresh weather details (add last udpated label)
 - AI-generated weather summary / clothing recommendations (text-based)
 - Unit, component, integration testing
 - Autocomplete dropdown for search bar (Google Places API?)
