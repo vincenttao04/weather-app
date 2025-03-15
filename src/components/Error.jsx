@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/error.css";
-import errorIcon from "../assets/error.svg";
-import closeIcon from "../assets/close.svg";
+import errorIcon from "../assets/icons/error.svg";
+import closeIcon from "../assets/icons/close.svg";
 
 const Error = ({ message, onClose }) => {
   if (!message) return null;

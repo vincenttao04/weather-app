@@ -14,10 +14,10 @@ const Weather = () => {
 
   const search = async (city) => {
     // Calls openweather api
-    const data = await fetchWeather(city);
+    const { data, error } = await fetchWeather(city);
 
     if (!data) {
-      setError("FAILURE");
+      setError(error);
       return;
     }
 

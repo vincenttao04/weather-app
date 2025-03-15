@@ -52,6 +52,7 @@ npm run dev
 - ✔️ Fix weather card size / stop dynamic size changes
 - Flexible text size incase of long text
 - Make weather icon sizes consistent with each other
+- Fix error message up positioning (make it drop from the top of the screen)
 
 #### Big Ideas:
 
@@ -65,3 +66,4 @@ npm run dev
 - Autocomplete dropdown for search bar (Google Places API?)
 - ✔️ Refactor code
 - Add voice input option for searching
+- Add animation / motion transition to error messages

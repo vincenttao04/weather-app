@@ -1,5 +1,5 @@
 import React from "react";
-import search_icon from "../assets/search.png";
+import search_icon from "../assets/icons/search.png";
 import "../styles/search-bar.css";
 
 function SearchBar({ inputValue, setInputValue, search }) {

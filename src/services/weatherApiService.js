@@ -17,11 +17,10 @@ export const fetchWeather = async (city) => {
       );
     }
 
-    return data;
+    return { data, error: null };
   } catch (error) {
-    const errorMessage = "Error fetching weather data: " + error.message;
-    console.error(errorMessage);
+    console.error("Error fetching weather data: " + error.message);
 
-    return null;
+    return { data: null, error: error.message };
   }
 };
