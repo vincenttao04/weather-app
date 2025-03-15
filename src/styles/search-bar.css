@@ -1,13 +1,14 @@
 .search-bar {
   position: relative;
-  width: 210px;
+  width: 220px;
+  margin-top: 5px;
 }
 
 .search-bar input {
   width: 100%;
   height: 50px;
-  padding-left: 50px;
-  padding-right: 23px;
+  padding-left: 47px;
+  padding-right: 15px;
   border: none;
   outline: none;
   border-radius: 25px;

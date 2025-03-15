@@ -1,15 +1,22 @@
 import React from "react";
 import "../styles/error.css";
+import errorIcon from "../assets/error.svg";
+import closeIcon from "../assets/close.svg";
 
 const Error = ({ message, onClose }) => {
   if (!message) return null;
 
   return (
-    <div className="error-message">
-      <span>{message}</span>
-      <button onClick={onClose} className="close-button">
-        X
-      </button>
+    <div className="error-container">
+      <div className="error-overlay">
+        <div className="error-message">
+          <img src={errorIcon} className="error-icon" />
+          <span>{message}</span>
+          <button onClick={onClose} className="close-button">
+            <img src={closeIcon} alt="Close" className="close-icon" />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
