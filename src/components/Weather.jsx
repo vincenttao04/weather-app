@@ -13,8 +13,7 @@ const Weather = () => {
   const [error, setError] = useState("");
 
   const search = async (city) => {
-    // Calls openweather api
-    const { data, error } = await fetchWeather(city);
+    const { data, error } = await fetchWeather(city); // Call Openweather API
 
     if (!data) {
       setError(error);
@@ -33,13 +32,11 @@ const Weather = () => {
     }));
 
     setWeatherData(formattedData);
-
-    // Reset input field to empty string after a successful search
     setInputValue("");
     setError("");
   };
 
-  // Initial city search when loading weather app.
+  // First city search
   useEffect(() => {
     search("Auckland");
   }, []);

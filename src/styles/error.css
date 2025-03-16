@@ -21,11 +21,10 @@
   white-space: nowrap;
 }
 
-.error-icon {
+.error-icon,
+.close-icon {
   width: 15px;
   fill: #ececec;
-  align-items: center;
-  justify-content: center;
 }
 
 .close-button {
@@ -36,9 +35,4 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-}
-
-.close-icon {
-  width: 11px; /* Adjust the size as needed */
-  fill: #ececec; /* Ensure the icon color can be customized */
 }
