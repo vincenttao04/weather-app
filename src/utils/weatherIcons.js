@@ -1,14 +1,14 @@
-import brokenclouds_day_icon from "../assets/brokenclouds_day.png";
-import brokenclouds_night_icon from "../assets/brokenclouds_night.png";
-import clear_night_icon from "../assets/clear_night.png";
-import mist_icon from "../assets/mist.png";
-import rain_day_icon from "../assets/rain_day.png";
-import rain_night_icon from "../assets/rain_night.png";
-import scatteredclouds_day_icon from "../assets/scatteredclouds_day.png";
-import scatteredclouds_night_icon from "../assets/scatteredclouds_night.png";
-import snow_icon from "../assets/snow.png";
-import thunderstorm_icon from "../assets/thunderstorm.png";
-import clear_day_icon from "../assets/clear_day.png";
+import brokenclouds_day_icon from "../assets/weather/brokenclouds_day.png";
+import brokenclouds_night_icon from "../assets/weather/brokenclouds_night.png";
+import clear_night_icon from "../assets/weather/clear_night.png";
+import mist_icon from "../assets/weather/mist.png";
+import rain_day_icon from "../assets/weather/rain_day.png";
+import rain_night_icon from "../assets/weather/rain_night.png";
+import scatteredclouds_day_icon from "../assets/weather/scatteredclouds_day.png";
+import scatteredclouds_night_icon from "../assets/weather/scatteredclouds_night.png";
+import snow_icon from "../assets/weather/snow.png";
+import thunderstorm_icon from "../assets/weather/thunderstorm.png";
+import clear_day_icon from "../assets/weather/clear_day.png";
 
 // Export a list of weather icons
 const weatherIcons = {

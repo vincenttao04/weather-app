@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchWeather } from "../services/weatherApiService.js";
 import "../styles/weather.css";
 import weatherIcons from "../utils/weatherIcons.js";
+import Error from "./Error.jsx";
 import WeatherData from "./WeatherData.jsx";
 import SearchBar from "./SearchBar.jsx";
 import moment from "moment";
@@ -9,12 +10,16 @@ import moment from "moment";
 const Weather = () => {
   const [weatherData, setWeatherData] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [error, setError] = useState("");
 
   const search = async (city) => {
     // Calls openweather api
-    const data = await fetchWeather(city);
+    const { data, error } = await fetchWeather(city);
 
-    if (!data) return;
+    if (!data) {
+      setError(error);
+      return;
+    }
 
     const forecastIndexes = [0, 8, 16]; // Current day, tomorrow, 2 days from now
     const formattedData = forecastIndexes.map((index) => ({
@@ -31,6 +36,7 @@ const Weather = () => {
 
     // Reset input field to empty string after a successful search
     setInputValue("");
+    setError("");
   };
 
   // Initial city search when loading weather app.
@@ -40,6 +46,9 @@ const Weather = () => {
 
   return (
     <div className="root-container">
+      <div className="error-container">
+        <Error message={error} onClose={() => setError("")} />
+      </div>
       <div className="weather-wrapper">
         {weatherData.map((data, index) => (
           <div className="weather" key={index}>
