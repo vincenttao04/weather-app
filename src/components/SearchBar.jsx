@@ -5,8 +5,15 @@ import "../styles/search-bar.css";
 
 function SearchBar({ inputValue, setInputValue, search }) {
   const [isListening, setIsListening] = useState(false);
+  const [recognition, setRecognition] = useState(null);
 
-  const startListening = () => {
+  const toggleListening = () => {
+    if (isListening) {
+      recognition.stop();
+      setIsListening(false);
+      return;
+    }
+
     if (
       !("webkitSpeechRecognition" in window || "SpeechRecognition" in window)
     ) {
@@ -14,23 +21,36 @@ function SearchBar({ inputValue, setInputValue, search }) {
       return;
     }
 
-    const recognition = new (window.SpeechRecognition ||
+    const newRecognition = new (window.SpeechRecognition ||
       window.webkitSpeechRecognition)();
-    recognition.lang = "en-US";
-    recognition.interimResults = false;
-    recognition.continuous = false;
 
-    recognition.onstart = () => setIsListening(true);
-    recognition.onresult = (event) => {
-      const transcript = event.results[0][0].transcript;
-      setInputValue(transcript);
-      search(transcript);
+    newRecognition.lang = "en-US";
+    newRecognition.interimResults = true;
+    newRecognition.continuous = true;
+
+    newRecognition.onstart = () => {
+      setIsListening(true);
+      setInputValue("");
     };
-    recognition.onerror = (event) =>
-      console.error("Speech Recognition Error:", event.error);
-    recognition.onend = () => setIsListening(false);
 
-    recognition.start();
+    newRecognition.onresult = (event) => {
+      const transcript = Array.from(event.results)
+        .map((result) => result[0].transcript)
+        .join("");
+      setInputValue(transcript);
+    };
+
+    newRecognition.onerror = (event) => {
+      console.error("Speech Recognition Error:", event.error);
+      setIsListening(false);
+    };
+
+    newRecognition.onend = () => {
+      setIsListening(false);
+    };
+
+    newRecognition.start();
+    setRecognition(newRecognition);
   };
 
   return (
@@ -45,7 +65,7 @@ function SearchBar({ inputValue, setInputValue, search }) {
       />
       <input
         type="text"
-        placeholder="Search"
+        placeholder={isListening ? "Listening..." : "Search"}
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
         onKeyDown={(e) => {
@@ -57,7 +77,7 @@ function SearchBar({ inputValue, setInputValue, search }) {
       <img
         src={mic_icon}
         alt="Microphone Icon"
-        onClick={startListening}
+        onClick={toggleListening}
         className={`mic-icon ${isListening ? "active" : ""}`}
       />
     </div>
