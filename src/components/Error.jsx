@@ -9,7 +9,7 @@ const Error = ({ message, onClose }) => {
 
     const timeout = setTimeout(() => {
       onClose();
-    }, 3000);
+    }, 4000);
 
     return () => {
       clearTimeout(timeout);

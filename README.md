@@ -4,7 +4,7 @@ A simple weather app built with React that allows users to check the 3 day weath
 
 Features:
 
-- Voice input search functionality (coming soon)
+- Voice input search functionality
 - MUI (?) integration (coming soon)
 
 ## Installation & Setup
@@ -52,5 +52,4 @@ npm run dev
 - AI-generated weather summary / clothing recommendations (text-based)
 - Unit, component, integration testing
 - Autocomplete dropdown for search bar (Google Places API?)
-- Add voice input option for searching
 - Add animation / motion transition to error messages

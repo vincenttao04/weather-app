@@ -17,9 +17,6 @@
   margin-top: 10px;
   font-size: 21px;
   white-space: nowrap;
-  /* overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 100%; */
 }
 
 .weather-data {
@@ -38,19 +35,16 @@
 }
 
 .weather-data .col p {
-  display: block;
   font-size: 18px;
   margin-top: 3px;
   font-weight: 600;
 }
 
 .weather-data .col span {
-  display: block;
   font-size: 14px;
   margin-top: 3px;
 }
 
 .weather-data .col img {
-  align-items: center;
   width: 26px;
 }
