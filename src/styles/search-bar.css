@@ -27,11 +27,17 @@
 
 .search-bar img.search-icon {
   left: 15px;
+  opacity: 0.6;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.search-bar img.search-icon:hover {
+  opacity: 1;
 }
 
 .search-bar img.mic-icon {
   right: 15px;
-  opacity: 0.7;
+  opacity: 0.6;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -41,7 +47,7 @@
 
 .search-bar img.mic-icon.active {
   opacity: 1;
-  filter: drop-shadow(0px 0px 5px #ef4444);
+  filter: drop-shadow(0px 0px 3px #ef4444);
 }
 
 .search-bar img.disabled {
