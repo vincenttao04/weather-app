@@ -2,10 +2,9 @@
 
 A simple weather app built with React that allows users to check the 3 day weather forecast of any city.
 
-Features:
+## Context
 
-- Voice input search functionality
-- MUI (?) integration (coming soon)
+Built as a fun at-home project to explore APIs and experiment with different React.js features like voice input integration and Material UI.
 
 ## Installation & Setup
 
@@ -46,10 +45,9 @@ npm run dev
 
 #### Big Ideas:
 
-- Change background depending on day/night
 - Add visibility / cloud coverage / precipitation metrics to weather card (test on Figma)
-- Button to expand weather chip to show more/less details
 - AI-generated weather summary / clothing recommendations (text-based)
 - Unit, component, integration testing
 - Autocomplete dropdown for search bar (Google Places API?)
 - Add animation / motion transition to error messages
+- Experiment with MUI
