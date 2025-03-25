@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
-import "../styles/error.css";
-import errorIcon from "../assets/icons/error.svg";
-import closeIcon from "../assets/icons/close.svg";
+// import "../styles/error.css";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
+import { Box } from "@mui/material";
 
 const Error = ({ message, onClose }) => {
   useEffect(() => {
@@ -19,17 +20,21 @@ const Error = ({ message, onClose }) => {
   if (!message) return null;
 
   return (
-    <div className="error-container">
-      <div className="error-overlay">
-        <div className="error-message">
-          <img src={errorIcon} className="error-icon" />
-          <span>{message}</span>
-          <button onClick={onClose} className="close-button">
-            <img src={closeIcon} alt="Close" className="close-icon" />
-          </button>
-        </div>
-      </div>
-    </div>
+    <Box
+      sx={{
+        position: "absolute",
+        top: "20px",
+        left: "50%",
+        transform: "translateX(-50%)",
+        zIndex: 1000,
+        width: "auto",
+        minWidth: "300px",
+      }}
+    >
+      <Alert severity="error" onClose={onClose}>
+        This is a success Alert with an encouraging title.
+      </Alert>
+    </Box>
   );
 };
 
