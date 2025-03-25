@@ -26,11 +26,11 @@ const Error = ({ message, onClose }) => {
         transform: "translateX(-50%)",
         zIndex: 1000,
         width: "auto",
-        minWidth: "300px",
+        maxWidth: "30%",
       }}
     >
       <Alert severity="error" onClose={onClose} className="alert">
-        This is a success Alert with an encouraging title.
+        {message}
       </Alert>
     </Box>
   );
