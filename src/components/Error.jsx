@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
-// import "../styles/error.css";
-import Alert from "@mui/material/Alert";
-import AlertTitle from "@mui/material/AlertTitle";
-import { Box } from "@mui/material";
+import "../styles/error.css";
+import { Alert, AlertTitle, Box } from "@mui/material";
 
 const Error = ({ message, onClose }) => {
   useEffect(() => {
@@ -31,7 +29,7 @@ const Error = ({ message, onClose }) => {
         minWidth: "300px",
       }}
     >
-      <Alert severity="error" onClose={onClose}>
+      <Alert severity="error" onClose={onClose} className="alert">
         This is a success Alert with an encouraging title.
       </Alert>
     </Box>
