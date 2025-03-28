@@ -10,3 +10,7 @@
 .MuiAlert-action {
   color: #ececec;
 }
+
+.alertTitle {
+  font-family: inherit !important;
+}
