@@ -5,12 +5,13 @@
   height: auto;
 }
 
-.alert .MuiAlert-icon,
+.alert.MuiAlert-icon,
 .MuiAlert-message,
 .MuiAlert-action {
   color: #ececec;
 }
 
-.alertTitle {
+.alert-title {
   font-family: inherit !important;
+  font-weight: 600 !important;
 }

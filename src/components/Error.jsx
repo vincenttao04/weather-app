@@ -3,17 +3,17 @@ import "../styles/error.css";
 import { Alert, AlertTitle, Box } from "@mui/material";
 
 const Error = ({ message, onClose }) => {
-  // useEffect(() => {
-  //   if (!message) return;
+  useEffect(() => {
+    if (!message) return;
 
-  //   const timeout = setTimeout(() => {
-  //     onClose();
-  //   }, 4000);
+    const timeout = setTimeout(() => {
+      onClose();
+    }, 4000);
 
-  //   return () => {
-  //     clearTimeout(timeout);
-  //   };
-  // }, [message, onClose]);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [message, onClose]);
 
   if (!message) return null;
 
