@@ -30,6 +30,7 @@ const Error = ({ message, onClose }) => {
       }}
     >
       <Alert severity="error" onClose={onClose} className="alert">
+        <AlertTitle className="alert-title">Error</AlertTitle>
         {message}
       </Alert>
     </Box>
