@@ -47,7 +47,7 @@ const Weather = () => {
       <Error message={error} onClose={() => setError("")} />
       <div className="weather-wrapper">
         {weatherData.map((data, index) => (
-          <Paper className="weather" key={index} elevation={18}>
+          <Paper className="weather" key={index} elevation={24}>
             <WeatherData weatherData={data} />
           </Paper>
         ))}
