@@ -6,6 +6,7 @@ import Error from "./Error.jsx";
 import WeatherData from "./WeatherData.jsx";
 import SearchBar from "./SearchBar.jsx";
 import moment from "moment";
+import Paper from "@mui/material/Paper";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState([]);
@@ -46,9 +47,9 @@ const Weather = () => {
       <Error message={error} onClose={() => setError("")} />
       <div className="weather-wrapper">
         {weatherData.map((data, index) => (
-          <div className="weather" key={index}>
+          <Paper className="weather" key={index} elevation={24}>
             <WeatherData weatherData={data} />
-          </div>
+          </Paper>
         ))}
       </div>
       {weatherData.length > 0 && (

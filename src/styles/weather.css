@@ -17,19 +17,17 @@
 
 .weather {
   padding: 42px;
-  border-radius: 25px;
-  background-image: linear-gradient(45deg, #2f4680, #500ae4);
+  border-radius: 25px !important;
+  background-image: linear-gradient(45deg, #2f4680, #500ae4) !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 350px;
   height: 494.9px;
-  margin-top: 50px;
 }
 
 .location {
   color: #ececec;
   font-size: 18px;
   font-weight: 800;
-  margin-top: 15px;
 }
