@@ -1,7 +1,7 @@
 import React from "react";
 import "../styles/weather-data.css";
-import AirIcon from "@mui/icons-material/Air";
-import WaterIcon from "@mui/icons-material/Water";
+import AirRoundedIcon from "@mui/icons-material/AirRounded";
+import WaterRoundedIcon from "@mui/icons-material/WaterRounded";
 
 const WeatherData = ({ weatherData }) => {
   return (
@@ -11,14 +11,14 @@ const WeatherData = ({ weatherData }) => {
       <p className="date">{weatherData.date}</p>
       <div className="weather-data">
         <div className="col">
-          <WaterIcon fontSize="large" />
+          <WaterRoundedIcon fontSize="large" />
           <div>
             <p>{weatherData.humidity} %</p>
             <span>Humidity</span>
           </div>
         </div>
         <div className="col">
-          <AirIcon fontSize="large" />
+          <AirRoundedIcon fontSize="large" />
           <div>
             <p>{weatherData.windSpeed} km/h</p>
             <span>Wind Speed</span>
