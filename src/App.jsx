@@ -10,16 +10,18 @@ const App = () => {
     setIsDarkMode(event.target.checked);
   };
 
+  // og background colour: #212121
+
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
       background: {
-        default: "#121212",
-        paper: "#1e1e1e",
+        default: "#121212", // app background
+        paper: "#1e1e1e", // paper colour background
       },
       text: {
-        primary: "#ffffff",
-        secondary: "#b3b3b3",
+        primary: "#00ff13", //ffffff
+        secondary: "#ff00dc", //#b3b3b3
       },
     },
   });
@@ -28,12 +30,12 @@ const App = () => {
     palette: {
       mode: "light",
       background: {
-        default: "#f5f5f5",
-        paper: "#ffffff",
+        default: "#f5f5f5", // app background
+        paper: "#ffffff", // paper colour background
       },
       text: {
-        primary: "#121212",
-        secondary: "#666666",
+        primary: "#00ff13", //121212
+        secondary: "#ff00dc", //666666
       },
     },
   });
