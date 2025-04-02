@@ -3,15 +3,17 @@ import { fetchWeather } from "../services/weatherApiService.js";
 import "../styles/weather.css";
 import weatherIcons from "../utils/weatherIcons.js";
 import Error from "./Error.jsx";
-import WeatherData from "./WeatherData.jsx";
 import SearchBar from "./SearchBar.jsx";
+import ThemeToggle from "./ThemeToggle.jsx";
+import WeatherData from "./WeatherData.jsx";
 import moment from "moment";
-import { Paper, Switch } from "@mui/material";
+import Paper from "@mui/material/Paper";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const search = async (city) => {
     const { data, error } = await fetchWeather(city); // Call Openweather API
@@ -35,6 +37,11 @@ const Weather = () => {
     setWeatherData(formattedData);
     setInputValue("");
     setError("");
+  };
+
+  const handleThemeChange = (event) => {
+    setIsDarkMode(event.target.checked);
+    console.log(isDarkMode);
   };
 
   // First city search
@@ -62,7 +69,8 @@ const Weather = () => {
         setInputValue={setInputValue}
         search={search}
       />
-      <Switch className="theme-toggle" />
+      <ThemeToggle onChange={handleThemeChange} />
+      <div>{isDarkMode ? "dark" : "light"}</div>
     </div>
   );
 };
