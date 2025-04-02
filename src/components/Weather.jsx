@@ -6,7 +6,7 @@ import Error from "./Error.jsx";
 import WeatherData from "./WeatherData.jsx";
 import SearchBar from "./SearchBar.jsx";
 import moment from "moment";
-import Paper from "@mui/material/Paper";
+import { Paper, Switch } from "@mui/material";
 
 const Weather = () => {
   const [weatherData, setWeatherData] = useState([]);
@@ -62,6 +62,7 @@ const Weather = () => {
         setInputValue={setInputValue}
         search={search}
       />
+      <Switch className="theme-toggle" />
     </div>
   );
 };

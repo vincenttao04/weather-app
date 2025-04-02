@@ -1,5 +1,6 @@
 .root-container {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -30,4 +31,10 @@
   color: #ececec;
   font-size: 18px;
   font-weight: 800;
+}
+
+.theme-toggle {
+  position: absolute !important;
+  bottom: 20px !important;
+  right: 20px !important;
 }
