@@ -9,11 +9,10 @@ import WeatherData from "./WeatherData.jsx";
 import moment from "moment";
 import Paper from "@mui/material/Paper";
 
-const Weather = () => {
+const Weather = ({ isDarkMode, handleThemeChange }) => {
   const [weatherData, setWeatherData] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
-  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const search = async (city) => {
     const { data, error } = await fetchWeather(city); // Call Openweather API
@@ -37,11 +36,6 @@ const Weather = () => {
     setWeatherData(formattedData);
     setInputValue("");
     setError("");
-  };
-
-  const handleThemeChange = (event) => {
-    setIsDarkMode(event.target.checked);
-    console.log(isDarkMode);
   };
 
   // First city search
@@ -69,7 +63,7 @@ const Weather = () => {
         setInputValue={setInputValue}
         search={search}
       />
-      <ThemeToggle onChange={handleThemeChange} />
+      <ThemeToggle checked={isDarkMode} onChange={handleThemeChange} />
       <div>{isDarkMode ? "dark" : "light"}</div>
     </div>
   );
