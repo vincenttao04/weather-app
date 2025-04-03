@@ -34,8 +34,8 @@ const App = () => {
         paper: "#ffffff", // paper colour background
       },
       text: {
-        primary: "#00ff13", //121212
-        secondary: "#ff00dc", //666666
+        primary: "#ff00dc", //121212
+        secondary: "#00ff13", //666666
       },
     },
   });
