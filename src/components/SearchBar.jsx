@@ -4,8 +4,11 @@ import InputAdornment from "@mui/material/InputAdornment";
 import MicRoundedIcon from "@mui/icons-material/MicRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import TextField from "@mui/material/TextField";
+import { useTheme } from "@mui/material";
 
 function SearchBar({ inputValue, setInputValue, search }) {
+  const theme = useTheme();
+
   // Voice input search code:
   const [isListening, setIsListening] = useState(false);
   const [recognition, setRecognition] = useState(null);
@@ -74,11 +77,8 @@ function SearchBar({ inputValue, setInputValue, search }) {
                 if (inputValue) search(inputValue);
               }}
               sx={{
-                opacity: inputValue === "" ? 0.6 : 1,
                 cursor: inputValue === "" ? "not-allowed" : "pointer",
-                "&:hover": {
-                  opacity: inputValue === "" ? 0.6 : 1,
-                },
+                "&:hover": {},
               }}
             />
           </InputAdornment>
@@ -88,7 +88,6 @@ function SearchBar({ inputValue, setInputValue, search }) {
             <MicRoundedIcon
               onClick={toggleListening}
               sx={{
-                opacity: isListening ? 1 : 0.6,
                 cursor: "pointer",
                 "&:hover": { opacity: 1 },
                 filter: isListening
@@ -100,13 +99,12 @@ function SearchBar({ inputValue, setInputValue, search }) {
         ),
       }}
       sx={{
-        width: "220px",
+        width: "230px",
+        backgroundColor: theme.palette.background.textfield,
+        borderRadius: "28px",
+        fieldset: { border: "none" },
         "& .MuiOutlinedInput-root": {
-          borderRadius: "25px",
-          height: "50px",
-          "& fieldset": { borderColor: "transparent" },
-          "&:hover fieldset": { borderColor: "transparent" },
-          "&.Mui-focused fieldset": { borderColor: "transparent" },
+          borderRadius: "28px", // Add this to match outer radius
         },
       }}
     />

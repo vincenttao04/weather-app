@@ -18,6 +18,7 @@ const App = () => {
       background: {
         default: "#121212", // app background
         paper: "#1e1e1e", // paper colour background
+        textfield: "#ff00dc",
       },
       text: {
         primary: "#00ff13", //ffffff
@@ -35,6 +36,7 @@ const App = () => {
       background: {
         default: "#f5f5f5", // app background
         paper: "#ffffff", // paper colour background
+        textfield: "#00ff13",
       },
       text: {
         primary: "#ff00dc", //121212
