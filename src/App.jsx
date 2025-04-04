@@ -24,6 +24,9 @@ const App = () => {
         secondary: "#ff00dc", //#b3b3b3
       },
     },
+    typography: {
+      fontFamily: '"Montserrat", sans-serif',
+    },
   });
 
   const lightTheme = createTheme({
@@ -37,6 +40,9 @@ const App = () => {
         primary: "#ff00dc", //121212
         secondary: "#00ff13", //666666
       },
+    },
+    typography: {
+      fontFamily: '"Montserrat", sans-serif',
     },
   });
 
