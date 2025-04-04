@@ -16,12 +16,12 @@ const App = () => {
     palette: {
       mode: "dark",
       background: {
-        default: "#121212", // app background
-        paper: "#1e1e1e", // paper colour background
-        textfield: "#ff00dc",
+        default: "#222222", // app background
+        paper: "#222222", // paper colour background
+        textfield: "#556067",
       },
       text: {
-        primary: "#00ff13", //ffffff
+        primary: "#faf7ff", //ffffff
         secondary: "#ff00dc", //#b3b3b3
       },
     },
