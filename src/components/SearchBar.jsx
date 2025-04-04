@@ -1,9 +1,15 @@
 import React, { useState } from "react";
-import search_icon from "../assets/icons/search.png";
-import mic_icon from "../assets/icons/mic.svg";
 import "../styles/search-bar.css";
+import InputAdornment from "@mui/material/InputAdornment";
+import MicRoundedIcon from "@mui/icons-material/MicRounded";
+import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import TextField from "@mui/material/TextField";
+import { useTheme } from "@mui/material";
 
 function SearchBar({ inputValue, setInputValue, search }) {
+  const theme = useTheme();
+
+  // Voice input search code:
   const [isListening, setIsListening] = useState(false);
   const [recognition, setRecognition] = useState(null);
 
@@ -54,33 +60,54 @@ function SearchBar({ inputValue, setInputValue, search }) {
   };
 
   return (
-    <div className="search-bar">
-      <img
-        src={search_icon}
-        alt="Search Icon"
-        onClick={() => {
-          if (inputValue) search(inputValue);
-        }}
-        className={`search-icon ${inputValue === "" ? "disabled" : ""}`}
-      />
-      <input
-        type="text"
-        placeholder={isListening ? "Listening..." : "Search"}
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" && inputValue.trim() !== "") {
-            search(inputValue);
-          }
-        }}
-      />
-      <img
-        src={mic_icon}
-        alt="Microphone Icon"
-        onClick={toggleListening}
-        className={`mic-icon ${isListening ? "active" : ""}`}
-      />
-    </div>
+    <TextField
+      value={inputValue}
+      onChange={(e) => setInputValue(e.target.value)}
+      placeholder={isListening ? "Listening..." : "Search"}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" && inputValue.trim() !== "") {
+          search(inputValue);
+        }
+      }}
+      InputProps={{
+        startAdornment: (
+          <InputAdornment position="start">
+            <SearchRoundedIcon
+              onClick={() => {
+                if (inputValue) search(inputValue);
+              }}
+              sx={{
+                cursor: inputValue === "" ? "not-allowed" : "pointer",
+                "&:hover": {},
+              }}
+            />
+          </InputAdornment>
+        ),
+        endAdornment: (
+          <InputAdornment position="end">
+            <MicRoundedIcon
+              onClick={toggleListening}
+              sx={{
+                cursor: "pointer",
+                "&:hover": { opacity: 1 },
+                filter: isListening
+                  ? "drop-shadow(0px 0px 3px #ef4444)"
+                  : "none",
+              }}
+            />
+          </InputAdornment>
+        ),
+      }}
+      sx={{
+        width: "230px",
+        backgroundColor: theme.palette.background.textfield,
+        borderRadius: "28px",
+        fieldset: { border: "none" },
+        "& .MuiOutlinedInput-root": {
+          borderRadius: "28px", // Add this to match outer radius
+        },
+      }}
+    />
   );
 }
 

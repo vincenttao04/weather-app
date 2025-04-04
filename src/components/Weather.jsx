@@ -3,12 +3,13 @@ import { fetchWeather } from "../services/weatherApiService.js";
 import "../styles/weather.css";
 import weatherIcons from "../utils/weatherIcons.js";
 import Error from "./Error.jsx";
-import WeatherData from "./WeatherData.jsx";
 import SearchBar from "./SearchBar.jsx";
+import ThemeToggle from "./ThemeToggle.jsx";
+import WeatherData from "./WeatherData.jsx";
 import moment from "moment";
 import Paper from "@mui/material/Paper";
 
-const Weather = () => {
+const Weather = ({ isDarkMode, handleThemeChange }) => {
   const [weatherData, setWeatherData] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
@@ -62,6 +63,8 @@ const Weather = () => {
         setInputValue={setInputValue}
         search={search}
       />
+      <ThemeToggle checked={isDarkMode} onChange={handleThemeChange} />
+      <div>{isDarkMode ? "dark" : "light"}</div>
     </div>
   );
 };
