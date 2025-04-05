@@ -10,19 +10,17 @@ const App = () => {
     setIsDarkMode(event.target.checked);
   };
 
-  // og background colour: #212121
-
   const darkTheme = createTheme({
     palette: {
       mode: "dark",
       background: {
-        default: "#121212", // app background
-        paper: "#1e1e1e", // paper colour background
-        textfield: "#ff00dc",
+        default: "#121212",
+        paper: "#282828",
+        textfield: "#282828",
       },
       text: {
-        primary: "#00ff13", //ffffff
-        secondary: "#ff00dc", //#b3b3b3
+        primary: "#ffffff",
+        secondary: "#8e9180", // temp. not in use
       },
     },
     typography: {
@@ -34,13 +32,13 @@ const App = () => {
     palette: {
       mode: "light",
       background: {
-        default: "#f5f5f5", // app background
-        paper: "#ffffff", // paper colour background
-        textfield: "#00ff13",
+        default: "#ffffff",
+        paper: "#f0f0f0",
+        textfield: "#f0f0f0",
       },
       text: {
-        primary: "#ff00dc", //121212
-        secondary: "#00ff13", //666666
+        primary: "#000000",
+        secondary: "#91b7bb", // temp. not in use
       },
     },
     typography: {

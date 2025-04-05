@@ -104,7 +104,7 @@ function SearchBar({ inputValue, setInputValue, search }) {
         borderRadius: "28px",
         fieldset: { border: "none" },
         "& .MuiOutlinedInput-root": {
-          borderRadius: "28px", // Add this to match outer radius
+          borderRadius: "28px",
         },
       }}
     />
