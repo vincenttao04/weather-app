@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Alert, AlertTitle, Box, useTheme } from "@mui/material";
+import { Alert, Box, useTheme } from "@mui/material";
 
 const Error = ({ message, onClose }) => {
   const theme = useTheme();
