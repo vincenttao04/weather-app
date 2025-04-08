@@ -10,10 +10,9 @@ const ThemeToggle = ({ checked, onChange }) => {
 
   return (
     <Stack
-      direction="row"
-      spacing={0}
-      sx={{ alignItems: "center" }}
       className="theme-toggle-switch"
+      direction="row"
+      sx={{ alignItems: "center" }}
     >
       <LightModeRoundedIcon sx={{ color: theme.palette.text.secondary }} />
       <Switch
