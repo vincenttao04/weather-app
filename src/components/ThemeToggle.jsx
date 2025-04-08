@@ -3,42 +3,37 @@ import "../styles/theme-toggle.css";
 import Switch from "@mui/material/Switch";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
-import { useTheme } from "@mui/material";
+import { Stack, useTheme } from "@mui/material";
 
 const ThemeToggle = ({ checked, onChange }) => {
   const theme = useTheme();
 
   return (
-    <Switch
+    <Stack
+      direction="row"
+      spacing={0}
+      sx={{ alignItems: "center" }}
       className="theme-toggle-switch"
-      checked={checked}
-      color="default"
-      onChange={onChange}
-      icon={
-        <LightModeRoundedIcon
-          className="light-mode"
-          style={{
-            width: "20px",
-            height: "20px",
-            transform: "scale(1.1)",
-            fill: theme.palette.text.primary,
-            // backgroundColor: theme.palette.text.secondary,
-          }}
-        />
-      }
-      checkedIcon={
-        <DarkModeRoundedIcon
-          className="dark-mode"
-          style={{
-            width: "20px",
-            height: "20px",
-            transform: "scale(1.1)",
-            fill: theme.palette.text.primary,
-            // backgroundColor: theme.palette.text.secondary,
-          }}
-        />
-      }
-    />
+    >
+      <LightModeRoundedIcon sx={{ color: theme.palette.text.secondary }} />
+      <Switch
+        checked={checked}
+        onChange={onChange}
+        sx={{
+          // Checked and unchecked state's track
+          ["& .MuiSwitch-track, & .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track"]:
+            {
+              backgroundColor: `${theme.palette.background.paper} !important`,
+              opacity: 1,
+            },
+          // Button profile
+          "& .MuiSwitch-thumb": {
+            backgroundColor: theme.palette.text.secondary,
+          },
+        }}
+      />
+      <DarkModeRoundedIcon sx={{ color: theme.palette.text.secondary }} />
+    </Stack>
   );
 };
 
