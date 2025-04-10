@@ -64,7 +64,6 @@ const Weather = ({ isDarkMode, handleThemeChange }) => {
         search={search}
       />
       <ThemeToggle checked={isDarkMode} onChange={handleThemeChange} />
-      <div>{isDarkMode ? "dark" : "light"}</div>
     </div>
   );
 };

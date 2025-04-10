@@ -47,7 +47,6 @@ npm run dev
 
 - Add visibility / cloud coverage / precipitation metrics to weather card (test on Figma)
 - AI-generated weather summary / clothing recommendations (text-based)
-- Unit, component, integration testing
+- Unit, component, integration testing (vitest?)
 - Autocomplete dropdown for search bar (Google Places API?)
 - Add animation / motion transition to error messages
-- Experiment with MUI
