@@ -10,22 +10,24 @@ const ThemeToggle = ({ checked, onChange }) => {
 
   return (
     <Stack
-      className="theme-toggle-switch"
       direction="row"
-      sx={{ alignItems: "center" }}
+      sx={{
+        alignItems: "center",
+        position: "absolute",
+        bottom: "20px",
+        right: "20px",
+      }}
     >
       <LightModeRoundedIcon sx={{ color: theme.palette.text.secondary }} />
       <Switch
         checked={checked}
         onChange={onChange}
         sx={{
-          // Checked and unchecked state's track
-          ["& .MuiSwitch-track, & .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track"]:
+          "& .MuiSwitch-track, & .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track":
             {
-              backgroundColor: `${theme.palette.background.paper} !important`,
+              backgroundColor: theme.palette.background.paper,
               opacity: 1,
             },
-          // Button profile
           "& .MuiSwitch-thumb": {
             backgroundColor: theme.palette.text.secondary,
           },
