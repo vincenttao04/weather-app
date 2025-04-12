@@ -106,10 +106,6 @@ function SearchBar({ inputValue, setInputValue, search }) {
           borderRadius: "28px",
           height: "56px",
         },
-        "& .MuiInputBase-input": {
-          height: "56px !important",
-          fontSize: "18px",
-        },
       }}
     />
   );
