@@ -1,5 +1,4 @@
 import React from "react";
-import "../styles/theme-toggle.css";
 import Switch from "@mui/material/Switch";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../styles/search-bar.css";
 import InputAdornment from "@mui/material/InputAdornment";
 import MicRoundedIcon from "@mui/icons-material/MicRounded";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
@@ -69,34 +68,34 @@ function SearchBar({ inputValue, setInputValue, search }) {
           search(inputValue);
         }
       }}
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <SearchRoundedIcon
-              onClick={() => {
-                if (inputValue) search(inputValue);
-              }}
-              sx={{
-                cursor: inputValue === "" ? "not-allowed" : "pointer",
-                "&:hover": {},
-              }}
-            />
-          </InputAdornment>
-        ),
-        endAdornment: (
-          <InputAdornment position="end">
-            <MicRoundedIcon
-              onClick={toggleListening}
-              sx={{
-                cursor: "pointer",
-                "&:hover": { opacity: 1 },
-                filter: isListening
-                  ? "drop-shadow(0px 0px 3px #ef4444)"
-                  : "none",
-              }}
-            />
-          </InputAdornment>
-        ),
+      slotProps={{
+        input: {
+          startAdornment: (
+            <InputAdornment position="start">
+              <SearchRoundedIcon
+                onClick={() => {
+                  if (inputValue) search(inputValue);
+                }}
+                sx={{
+                  cursor: inputValue === "" ? "not-allowed" : "pointer",
+                }}
+              />
+            </InputAdornment>
+          ),
+          endAdornment: (
+            <InputAdornment position="end">
+              <MicRoundedIcon
+                onClick={toggleListening}
+                sx={{
+                  cursor: "pointer",
+                  filter: isListening
+                    ? "drop-shadow(0px 0px 3px #ef4444)"
+                    : "none",
+                }}
+              />
+            </InputAdornment>
+          ),
+        },
       }}
       sx={{
         width: "230px",
@@ -105,6 +104,11 @@ function SearchBar({ inputValue, setInputValue, search }) {
         fieldset: { border: "none" },
         "& .MuiOutlinedInput-root": {
           borderRadius: "28px",
+          height: "56px",
+        },
+        "& .MuiInputBase-input": {
+          height: "56px !important",
+          fontSize: "18px",
         },
       }}
     />
