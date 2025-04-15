@@ -78,6 +78,7 @@ function SearchBar({ inputValue, setInputValue, search }) {
                 }}
                 sx={{
                   cursor: inputValue === "" ? "not-allowed" : "pointer",
+                  color: theme.palette.text.secondary,
                 }}
               />
             </InputAdornment>
@@ -91,6 +92,7 @@ function SearchBar({ inputValue, setInputValue, search }) {
                   filter: isListening
                     ? "drop-shadow(0px 0px 3px #ef4444)"
                     : "none",
+                  color: theme.palette.text.secondary,
                 }}
               />
             </InputAdornment>
@@ -105,6 +107,10 @@ function SearchBar({ inputValue, setInputValue, search }) {
         "& .MuiOutlinedInput-root": {
           borderRadius: "28px",
           height: "56px",
+        },
+        "& .MuiInputBase-input::placeholder": {
+          color: theme.palette.text.secondary, // Placeholder text
+          opacity: 1,
         },
       }}
     />
