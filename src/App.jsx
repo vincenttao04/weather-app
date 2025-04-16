@@ -20,7 +20,7 @@ const App = () => {
       },
       text: {
         primary: "#ffffff",
-        secondary: "#8e9180",
+        secondary: "#b0b692",
       },
     },
     typography: {
@@ -38,7 +38,7 @@ const App = () => {
       },
       text: {
         primary: "#000000",
-        secondary: "#91b7bb",
+        secondary: "#448289",
       },
     },
     typography: {

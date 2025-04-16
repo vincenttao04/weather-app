@@ -27,8 +27,8 @@
 .weather-data .col {
   display: flex;
   align-items: center;
-  gap: 12px;
-  font-size: 20px;
+  gap: 8px;
+  font-size: 10px;
 }
 
 .weather-data .col p {
@@ -40,4 +40,8 @@
 .weather-data .col span {
   font-size: 14px;
   margin-top: 3px;
+}
+
+.labels {
+  color: var(--text-secondary);
 }
