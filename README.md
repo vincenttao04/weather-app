@@ -42,11 +42,11 @@ npm run dev
 - Flexible text size incase of long text
 - Make weather icon sizes consistent with each other
 - Fix error message up positioning (make it drop from the top of the screen)
+- Try out other APIs? Maybe one for flags?
 
 #### Big Ideas:
 
 - Add visibility / cloud coverage / precipitation metrics to weather card (test on Figma)
 - AI-generated weather summary / clothing recommendations (text-based)
 - Unit, component, integration testing (vitest?)
-- Autocomplete dropdown for search bar (Google Places API?)
 - Add animation / motion transition to error messages
