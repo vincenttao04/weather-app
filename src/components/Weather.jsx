@@ -54,9 +54,7 @@ const Weather = ({ isDarkMode, handleThemeChange }) => {
         ))}
       </div>
       {weatherData.length > 0 && (
-        <div className="location">
-          <p>{weatherData[0].location}</p>
-        </div>
+        <div className="location">{weatherData[0].location}</div>
       )}
       <SearchBar
         inputValue={inputValue}
