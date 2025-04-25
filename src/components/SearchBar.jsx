@@ -105,8 +105,8 @@ function SearchBar({ inputValue, setInputValue, search }) {
         borderRadius: "28px",
         fieldset: { border: "none" },
         "& .MuiOutlinedInput-root": {
-          borderRadius: "28px",
-          height: "56px",
+          borderRadius: "25px",
+          height: "50px",
         },
         "& .MuiInputBase-input::placeholder": {
           color: theme.palette.text.secondary, // Placeholder text

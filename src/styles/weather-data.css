@@ -1,25 +1,33 @@
 .weather-icon {
-  width: 190px;
-  margin-top: 10px;
-  margin-bottom: 15px;
+  width: 150px;
+  margin-top: 12px;
+  margin-bottom: 20px;
 }
 
 .temperature {
-  font-size: 60px;
+  font-size: 50px;
   line-height: 1;
   font-weight: 700;
-  margin-bottom: 7px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .date {
-  margin-top: 10px;
-  font-size: 21px;
+  font-size: 20px;
+  width: 100%;
+  text-align: center;
   white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .weather-data {
   width: 100%;
-  margin-top: 30px;
+  margin-top: 23px;
   display: flex;
   justify-content: space-between;
 }
@@ -27,21 +35,26 @@
 .weather-data .col {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 10px;
+  width: 133px;
 }
 
-.weather-data .col p {
-  font-size: 18px;
+.weather-data .col .labels p {
+  font-size: 16px;
   margin-top: 3px;
   font-weight: 600;
 }
 
-.weather-data .col span {
-  font-size: 14px;
+.weather-data .col .labels span {
+  font-size: 12px;
   margin-top: 3px;
 }
 
-.labels {
+.weather-data .col .labels {
   color: var(--text-secondary);
+  margin-left: 8px;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
