@@ -1,7 +1,7 @@
 import React from "react";
 import Switch from "@mui/material/Switch";
-import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
-import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
+import DarkModeIcon from "@mui/icons-material/DarkModeRounded";
+import LightModeIcon from "@mui/icons-material/LightModeRounded";
 import { Stack, useTheme } from "@mui/material";
 
 const ThemeToggle = ({ checked, onChange }) => {
@@ -17,7 +17,7 @@ const ThemeToggle = ({ checked, onChange }) => {
         right: "20px",
       }}
     >
-      <LightModeRoundedIcon sx={{ color: theme.palette.text.secondary }} />
+      <LightModeIcon sx={{ color: theme.palette.text.secondary }} />
       <Switch
         checked={checked}
         onChange={onChange}
@@ -32,7 +32,7 @@ const ThemeToggle = ({ checked, onChange }) => {
           },
         }}
       />
-      <DarkModeRoundedIcon sx={{ color: theme.palette.text.secondary }} />
+      <DarkModeIcon sx={{ color: theme.palette.text.secondary }} />
     </Stack>
   );
 };

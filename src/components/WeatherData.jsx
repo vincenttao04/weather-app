@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "../styles/weather-data.css";
-import AirRoundedIcon from "@mui/icons-material/AirRounded";
-import WaterRoundedIcon from "@mui/icons-material/WaterRounded";
+import WindSpeedIcon from "@mui/icons-material/AirRounded";
+import HumidityIcon from "@mui/icons-material/WaterRounded";
 import { useTheme } from "@mui/material";
 
 const WeatherData = ({ weatherData }) => {
@@ -21,7 +21,7 @@ const WeatherData = ({ weatherData }) => {
       <p className="date">{weatherData.date}</p>
       <div className="weather-data">
         <div className="col">
-          <WaterRoundedIcon
+          <HumidityIcon
             fontSize="large"
             sx={{ color: theme.palette.text.secondary }}
           />
@@ -31,7 +31,7 @@ const WeatherData = ({ weatherData }) => {
           </div>
         </div>
         <div className="col">
-          <AirRoundedIcon
+          <WindSpeedIcon
             fontSize="large"
             sx={{ color: theme.palette.text.secondary }}
           />

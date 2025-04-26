@@ -8,6 +8,8 @@ import ThemeToggle from "./ThemeToggle.jsx";
 import WeatherData from "./WeatherData.jsx";
 import moment from "moment";
 import Paper from "@mui/material/Paper";
+import ThreeDayIcon from "@mui/icons-material/ViewWeekRounded";
+import OneDayIcon from "@mui/icons-material/WebAssetRounded";
 
 const Weather = ({ isDarkMode, handleThemeChange }) => {
   const [weatherData, setWeatherData] = useState([]);
@@ -46,6 +48,9 @@ const Weather = ({ isDarkMode, handleThemeChange }) => {
   return (
     <div className="root-container">
       <Error message={error} onClose={() => setError("")} />
+      {/* change icons to hover clickable */}
+      <ThreeDayIcon sx={{ cursor: "pointer" }} />
+      <OneDayIcon sx={{ cursor: "pointer" }} />
       <div className="weather-wrapper">
         {weatherData.map((data, index) => (
           <Paper className="weather" key={index} elevation={0}>
