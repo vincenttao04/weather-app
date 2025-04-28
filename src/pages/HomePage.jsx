@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Weather from "../components/Weather";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
@@ -10,16 +9,16 @@ import Error from "../components/Error.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
 import WeatherData from "../components/WeatherData.jsx";
+import ViewToggle from "../components/ViewToggle.jsx";
 import moment from "moment";
 import Paper from "@mui/material/Paper";
-import ThreeDayIcon from "@mui/icons-material/ViewWeekRounded";
-import OneDayIcon from "@mui/icons-material/WebAssetRounded";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const [weatherData, setWeatherData] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
+  const [view, setView] = useState("three-day");
 
   const darkTheme = createTheme({
     palette: {
@@ -57,10 +56,6 @@ const App = () => {
     },
   });
 
-  const handleThemeChange = (event) => {
-    setIsDarkMode(event.target.checked);
-  };
-
   const search = async (city) => {
     const { data, error } = await fetchWeather(city); // Call Openweather API
 
@@ -95,14 +90,17 @@ const App = () => {
       <CssBaseline />
       <div className="root-container">
         <Error message={error} onClose={() => setError("")} />
-        <ThreeDayIcon sx={{ cursor: "pointer" }} />
-        <OneDayIcon sx={{ cursor: "pointer" }} />
+        <ViewToggle view={view} setView={setView} />
         <div className="weather-wrapper">
-          {weatherData.map((data, index) => (
-            <Paper className="weather" key={index} elevation={0}>
-              <WeatherData weatherData={data} />
-            </Paper>
-          ))}
+          {view === "three-day" ? (
+            weatherData.map((data, index) => (
+              <Paper className="weather" key={index} elevation={0}>
+                <WeatherData weatherData={data} />
+              </Paper>
+            ))
+          ) : (
+            <p>one day view coming soon</p>
+          )}
         </div>
         {weatherData.length > 0 && (
           <div className="location">{weatherData[0].location}</div>
@@ -112,7 +110,7 @@ const App = () => {
           setInputValue={setInputValue}
           search={search}
         />
-        <ThemeToggle checked={isDarkMode} onChange={handleThemeChange} />
+        <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>
     </ThemeProvider>
   );

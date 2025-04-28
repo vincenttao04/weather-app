@@ -4,7 +4,7 @@ import DarkModeIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeIcon from "@mui/icons-material/LightModeRounded";
 import { Stack, useTheme } from "@mui/material";
 
-const ThemeToggle = ({ checked, onChange }) => {
+const ThemeToggle = ({ isDarkMode, setIsDarkMode }) => {
   const theme = useTheme();
 
   return (
@@ -19,8 +19,8 @@ const ThemeToggle = ({ checked, onChange }) => {
     >
       <LightModeIcon sx={{ color: theme.palette.text.secondary }} />
       <Switch
-        checked={checked}
-        onChange={onChange}
+        checked={isDarkMode}
+        onChange={() => setIsDarkMode(!isDarkMode)}
         sx={{
           "& .MuiSwitch-track, & .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track":
             {
