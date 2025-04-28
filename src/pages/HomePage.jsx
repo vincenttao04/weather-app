@@ -1,60 +1,35 @@
+// React import
 import React, { useEffect, useState } from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
 
+// External library imports
+import { ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import moment from "moment";
+import Paper from "@mui/material/Paper";
+
+// Service/API imports
 import { fetchWeather } from "../services/weatherApiService.js";
-import "../styles/weather.css";
+
+// Utility imports
+import { darkTheme, lightTheme } from "../utils/theme";
 import weatherIcons from "../utils/weatherIcons.js";
+
+// Component imports
 import Error from "../components/Error.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
 import WeatherData from "../components/WeatherData.jsx";
 import ViewToggle from "../components/ViewToggle.jsx";
-import moment from "moment";
-import Paper from "@mui/material/Paper";
+
+// CSS imports
+import "../styles/weather.css";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [view, setView] = useState("three-day");
   const [weatherData, setWeatherData] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
-  const [view, setView] = useState("three-day");
-
-  const darkTheme = createTheme({
-    palette: {
-      mode: "dark",
-      background: {
-        default: "#121212",
-        paper: "#282828",
-        textfield: "#282828",
-      },
-      text: {
-        primary: "#ffffff",
-        secondary: "#b0b692",
-      },
-    },
-    typography: {
-      fontFamily: '"Montserrat", sans-serif',
-    },
-  });
-
-  const lightTheme = createTheme({
-    palette: {
-      mode: "light",
-      background: {
-        default: "#ffffff",
-        paper: "#f0f0f0",
-        textfield: "#f0f0f0",
-      },
-      text: {
-        primary: "#000000",
-        secondary: "#448289",
-      },
-    },
-    typography: {
-      fontFamily: '"Montserrat", sans-serif',
-    },
-  });
 
   const search = async (city) => {
     const { data, error } = await fetchWeather(city); // Call Openweather API

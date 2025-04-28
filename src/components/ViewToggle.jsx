@@ -1,8 +1,22 @@
 import React from "react";
 import ThreeDayIcon from "@mui/icons-material/ViewWeekRounded";
 import OneDayIcon from "@mui/icons-material/WebAssetRounded";
+import { useTheme } from "@mui/material";
 
 const ViewToggle = ({ view, setView }) => {
+  const theme = useTheme();
+
+  const iconConfigs = [
+    {
+      Icon: OneDayIcon,
+      viewType: "one-day",
+    },
+    {
+      Icon: ThreeDayIcon,
+      viewType: "three-day",
+    },
+  ];
+
   return (
     <div
       className="view-toggle-container"
@@ -15,14 +29,20 @@ const ViewToggle = ({ view, setView }) => {
         borderRadius: "5px",
       }}
     >
-      <OneDayIcon
-        sx={{ cursor: "pointer" }}
-        onClick={() => setView("one-day")}
-      />
-      <ThreeDayIcon
-        sx={{ cursor: "pointer" }}
-        onClick={() => setView("three-day")}
-      />
+      {iconConfigs.map(({ Icon, viewType }) => {
+        const ViewIcon = Icon;
+        return (
+          <ViewIcon
+            key={viewType}
+            sx={{
+              cursor: "pointer",
+              color: theme.palette.text.secondary,
+              backgroundColor: view === viewType ? "white" : "transparent",
+            }}
+            onClick={() => setView(viewType)}
+          />
+        );
+      })}
     </div>
   );
 };
