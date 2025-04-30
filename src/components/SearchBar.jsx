@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import InputAdornment from "@mui/material/InputAdornment";
-import MicRoundedIcon from "@mui/icons-material/MicRounded";
-import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import MicIcon from "@mui/icons-material/MicRounded";
+import SearchIcon from "@mui/icons-material/SearchRounded";
 import TextField from "@mui/material/TextField";
 import { useTheme } from "@mui/material";
 
@@ -72,7 +72,7 @@ function SearchBar({ inputValue, setInputValue, search }) {
         input: {
           startAdornment: (
             <InputAdornment position="start">
-              <SearchRoundedIcon
+              <SearchIcon
                 onClick={() => {
                   if (inputValue) search(inputValue);
                 }}
@@ -85,7 +85,7 @@ function SearchBar({ inputValue, setInputValue, search }) {
           ),
           endAdornment: (
             <InputAdornment position="end">
-              <MicRoundedIcon
+              <MicIcon
                 onClick={toggleListening}
                 sx={{
                   cursor: "pointer",
