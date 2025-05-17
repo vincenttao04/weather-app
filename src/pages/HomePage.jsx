@@ -107,18 +107,22 @@ const App = () => {
               <p>
                 Current weather in {oneDayWeatherData.location}:{" "}
                 {oneDayWeatherData.temperature}°C, windspeed:{" "}
-                {oneDayWeatherData.windSpeed} m/s
+                {oneDayWeatherData.windSpeed} km/h
               </p>
             </>
           )}
         </div>
-        {threeDayWeatherData.length > 0 && (
+        {view === "three-day" && threeDayWeatherData.length > 0 ? (
           <div className="location">{threeDayWeatherData[0].location}</div>
+        ) : (
+          <div className="location">{oneDayWeatherData.location}</div>
         )}
         <SearchBar
           inputValue={inputValue}
           setInputValue={setInputValue}
-          search={searchOne}
+          search={(city) =>
+            view === "three-day" ? searchOne(city) : searchTwo(city)
+          }
         />
         <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>
