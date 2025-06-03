@@ -1,7 +1,7 @@
 export const fetchThreeDayWeather = async (city) => {
   try {
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=17&appid=${
-      import.meta.env.VITE_API_KEY
+      import.meta.env.VITE_APP_ID
     }`;
 
     const response = await fetch(url);
