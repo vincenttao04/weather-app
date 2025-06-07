@@ -8,10 +8,7 @@ import moment from "moment";
 import Paper from "@mui/material/Paper";
 
 // Service/API imports
-import {
-  fetchThreeDayWeather,
-  fetchOneDayWeather,
-} from "../services/weatherApiService.js";
+import { fetchWeather } from "../services/weatherApiService.js";
 
 // Utility imports
 import { darkTheme, lightTheme } from "../utils/theme";
@@ -33,11 +30,10 @@ const App = () => {
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
-  const [threeDayWeatherData, setThreeDayWeatherData] = useState([]);
-  const [oneDayWeatherData, setOneDayWeatherData] = useState("");
+  const [weatherData, setWeatherData] = useState([]);
 
-  const searchOne = async (city) => {
-    const { data, error } = await fetchThreeDayWeather(city); // Call Openweather API
+  const searchCity = async (city) => {
+    const { data, error } = await fetchWeather(city); // Call Openweather API
 
     if (!data) {
       setError(error);
@@ -55,37 +51,14 @@ const App = () => {
       date: moment.unix(data.list[index]?.dt).format("dddd D MMMM"),
     }));
 
-    setThreeDayWeatherData(formattedData);
-    setInputValue("");
-    setError("");
-  };
-
-  const searchTwo = async (city) => {
-    const { data, error } = await fetchOneDayWeather(city);
-
-    if (!data) {
-      setError(error);
-      return;
-    }
-
-    const formattedData = {
-      humidity: data.main.humidity,
-      windSpeed: data.wind.speed,
-      temperature: Math.round(data.main.temp),
-      location: data.name,
-      icon: weatherIcons[data.weather[0].icon] || weatherIcons["01d"],
-      date: moment.unix(data.dt).format("dddd D MMMM"),
-    };
-
-    setOneDayWeatherData(formattedData);
+    setWeatherData(formattedData);
     setInputValue("");
     setError("");
   };
 
   // First city search
   useEffect(() => {
-    searchOne("Auckland");
-    searchTwo("Sydney");
+    searchCity("Auckland");
   }, []);
 
   return (
@@ -96,33 +69,22 @@ const App = () => {
         <ViewToggle view={view} setView={setView} />
         <div className="weather-wrapper">
           {view === "three-day" ? (
-            threeDayWeatherData.map((data, index) => (
+            weatherData.map((data, index) => (
               <Paper className="weather" key={index} elevation={0}>
                 <WeatherData weatherData={data} />
               </Paper>
             ))
           ) : (
-            <>
-              <p>one day view coming soon</p>
-              <p>
-                Current weather in {oneDayWeatherData.location}:{" "}
-                {oneDayWeatherData.temperature}°C, windspeed:{" "}
-                {oneDayWeatherData.windSpeed} km/h
-              </p>
-            </>
+            <Paper className="weather"></Paper>
           )}
         </div>
-        {view === "three-day" && threeDayWeatherData.length > 0 ? (
-          <div className="location">{threeDayWeatherData[0].location}</div>
-        ) : (
-          <div className="location">{oneDayWeatherData.location}</div>
-        )}
+        <div className="location">
+          {weatherData.length > 0 && weatherData[0].location}
+        </div>
         <SearchBar
           inputValue={inputValue}
           setInputValue={setInputValue}
-          search={(city) =>
-            view === "three-day" ? searchOne(city) : searchTwo(city)
-          }
+          search={(city) => searchCity(city)}
         />
         <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>
@@ -131,3 +93,10 @@ const App = () => {
 };
 
 export default App;
+
+// <p>one day view coming soon</p>
+// <p>
+//   Current weather in {oneDayWeatherData.location}:{" "}
+//   {oneDayWeatherData.temperature}°C, windspeed:{" "}
+//   {oneDayWeatherData.windSpeed} km/h
+// </p>
