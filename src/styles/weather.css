@@ -17,7 +17,7 @@
   margin-top: 50px;
 }
 
-.weather {
+.three-day {
   padding: 42px;
   border-radius: 28px !important;
   display: flex;
@@ -25,6 +25,13 @@
   align-items: center;
   width: 330px;
   height: 440px; /* 1.3 rectangle ratio */
+}
+
+.one-day {
+  padding: 42px;
+  border-radius: 28px !important;
+  width: 100%;
+  height: 440px;
 }
 
 .location {

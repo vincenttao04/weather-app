@@ -70,12 +70,14 @@ const App = () => {
         <div className="weather-wrapper">
           {view === "three-day" ? (
             weatherData.map((data, index) => (
-              <Paper className="weather" key={index} elevation={0}>
+              <Paper className="three-day" key={index} elevation={0}>
                 <WeatherData weatherData={data} />
               </Paper>
             ))
           ) : (
-            <Paper className="weather"></Paper>
+            <Paper className="one-day" elevation={0}>
+              <WeatherData weatherData={weatherData[0]} />
+            </Paper>
           )}
         </div>
         <div className="location">
