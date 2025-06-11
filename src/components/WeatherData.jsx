@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../styles/weather-data.css";
+import "../styles/three-day-data.css";
 import WindSpeedIcon from "@mui/icons-material/AirRounded";
 import HumidityIcon from "@mui/icons-material/WaterRounded";
 import { useTheme } from "@mui/material";
@@ -19,7 +19,7 @@ const WeatherData = ({ weatherData }) => {
       <img src={weatherData.icon} alt="Weather Icon" className="weather-icon" />
       <p className="temperature">{weatherData.temperature}°C</p>
       <p className="date">{weatherData.date}</p>
-      <div className="weather-data">
+      <div className="three-day-data">
         <div className="col">
           <HumidityIcon
             fontSize="large"

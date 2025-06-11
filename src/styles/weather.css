@@ -12,9 +12,16 @@
 
 .weather-wrapper {
   display: flex;
-  justify-content: space-between;
   width: 1080px;
   margin-top: 50px;
+}
+
+.weather-wrapper.center {
+  justify-content: center;
+}
+
+.weather-wrapper.between {
+  justify-content: space-between;
 }
 
 .three-day {
@@ -30,7 +37,8 @@
 .one-day {
   padding: 42px;
   border-radius: 28px !important;
-  width: 100%;
+  align-items: center;
+  width: 572px;
   height: 440px;
 }
 

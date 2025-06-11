@@ -67,7 +67,11 @@ const App = () => {
       <div className="root-container">
         <Error message={error} onClose={() => setError("")} />
         <ViewToggle view={view} setView={setView} />
-        <div className="weather-wrapper">
+        <div
+          className={`weather-wrapper ${
+            view === "three-day" ? "between" : "center"
+          }`}
+        >
           {view === "three-day" ? (
             weatherData.map((data, index) => (
               <Paper className="three-day" key={index} elevation={0}>

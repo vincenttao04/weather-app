@@ -25,31 +25,31 @@
   overflow: hidden;
 }
 
-.weather-data {
+.three-day-data {
   width: 100%;
   margin-top: 23px;
   display: flex;
   justify-content: space-between;
 }
 
-.weather-data .col {
+.three-day-data .col {
   display: flex;
   align-items: center;
   width: 133px;
 }
 
-.weather-data .col .labels p {
+.three-day-data .col .labels p {
   font-size: 16px;
   margin-top: 3px;
   font-weight: 600;
 }
 
-.weather-data .col .labels span {
+.three-day-data .col .labels span {
   font-size: 12px;
   margin-top: 3px;
 }
 
-.weather-data .col .labels {
+.three-day-data .col .labels {
   color: var(--text-secondary);
   margin-left: 8px;
   flex: 1;
