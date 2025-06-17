@@ -4,7 +4,7 @@ import WindSpeedIcon from "@mui/icons-material/AirRounded";
 import HumidityIcon from "@mui/icons-material/WaterRounded";
 import { useTheme } from "@mui/material";
 
-const WeatherData = ({ weatherData }) => {
+const ThreeDayWeather = ({ weatherData }) => {
   const theme = useTheme();
 
   useEffect(() => {
@@ -45,4 +45,4 @@ const WeatherData = ({ weatherData }) => {
   );
 };
 
-export default WeatherData;
+export default ThreeDayWeather;

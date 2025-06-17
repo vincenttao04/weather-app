@@ -16,9 +16,10 @@ import weatherIcons from "../utils/weatherIcons.js";
 
 // Component imports
 import Error from "../components/Error.jsx";
+import OneDayWeather from "../components/OneDayWeather.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
-import WeatherData from "../components/WeatherData.jsx";
+import ThreeDayWeather from "../components/ThreeDayWeather.jsx";
 import ViewToggle from "../components/ViewToggle.jsx";
 
 // CSS imports
@@ -40,6 +41,7 @@ const App = () => {
       return;
     }
 
+    // TODO: REFACTOR SO THAT IT ONLY STORES ONE DAY WEATHER COMPONENT DATA ONLY FOR FIRST DAY
     const forecastIndexes = [0, 8, 16]; // Current day, tomorrow, 2 days from now
     const formattedData = forecastIndexes.map((index) => ({
       humidity: data.list[index]?.main.humidity,
@@ -49,6 +51,13 @@ const App = () => {
       icon:
         weatherIcons[data.list[index]?.weather[0]?.icon] || weatherIcons["01d"],
       date: moment.unix(data.list[index]?.dt).format("dddd D MMMM"),
+
+      // Used by OneDayWeather component only
+      minTemperature: Math.round(data.list[index]?.main.temp_min),
+      maxTemperature: Math.round(data.list[index]?.main.temp_max),
+      feelsLikeTemp: Math.round(data.list[index]?.main.feels_like),
+      visibility: Math.ceil(data.list[index]?.visibility / 1000),
+      cloudCoverage: data.list[index]?.clouds.all,
     }));
 
     setWeatherData(formattedData);
@@ -75,12 +84,12 @@ const App = () => {
           {view === "three-day" ? (
             weatherData.map((data, index) => (
               <Paper className="three-day" key={index} elevation={0}>
-                <WeatherData weatherData={data} />
+                <ThreeDayWeather weatherData={data} />
               </Paper>
             ))
           ) : (
             <Paper className="one-day" elevation={0}>
-              <WeatherData weatherData={weatherData[0]} />
+              <OneDayWeather weatherData={weatherData[0]} />
             </Paper>
           )}
         </div>
