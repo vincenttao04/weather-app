@@ -60,3 +60,9 @@ Current PR / Branch Development:
 Next PR / Branch Development:
 
 - Use OpenAI's GPT API to generate human readable weather summaries based on raw weather data and display it into the one day view
+
+Todo:
+
+- clear/simplify css - remove redundant lines
+- refactor css, make names more readable to 3/1 day views
+- make h1 to h6, etc.
