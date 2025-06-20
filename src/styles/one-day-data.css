@@ -1,3 +1,10 @@
+.parent-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
 .top-wrapper {
   display: flex;
   align-items: center;
@@ -32,4 +39,42 @@
   font-size: 30px;
   font-weight: 800;
   text-align: center;
+}
+
+/* .bottom-wrapper {
+  display: flex;
+} */
+
+.bottom-wrapper {
+  width: 100%;
+  margin-top: 23px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-wrapper .col {
+  display: flex;
+  align-items: center;
+  /* width: 100%; */
+}
+
+.bottom-wrapper .col .labels p {
+  font-size: 16px;
+  margin-top: 3px;
+  font-weight: 600;
+}
+
+.bottom-wrapper .col .labels span {
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.bottom-wrapper .col .labels {
+  /* color: var(--text-secondary); */
+  margin-left: 8px;
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }

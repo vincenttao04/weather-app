@@ -35,7 +35,7 @@
 .three-day-data .col {
   display: flex;
   align-items: center;
-  width: 133px;
+  /* width: 133px; */
 }
 
 .three-day-data .col .labels p {

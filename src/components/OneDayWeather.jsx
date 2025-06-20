@@ -2,13 +2,14 @@ import React, { useEffect } from "react";
 import "../styles/one-day-data.css";
 import WindSpeedIcon from "@mui/icons-material/AirRounded";
 import HumidityIcon from "@mui/icons-material/WaterRounded";
+import FilterDramaRoundedIcon from "@mui/icons-material/FilterDramaRounded";
 import { useTheme } from "@mui/material";
 
 const OneDayWeather = ({ weatherData }) => {
   const theme = useTheme();
 
   return (
-    <>
+    <div className="parent-wrapper">
       <div className="top-wrapper">
         <div className="icon-col">
           <img
@@ -33,14 +34,38 @@ const OneDayWeather = ({ weatherData }) => {
 
       <p className="one-day-date">{weatherData.date}</p>
 
-      <p>{weatherData.humidity} %</p>
-      <p>{weatherData.windSpeed} km/h</p>
-      <p>{weatherData.cloudCoverage} %</p>
-      <p>{weatherData.visibility} km</p>
-    </>
+      <div className="bottom-wrapper">
+        <div className="col">
+          <FilterDramaRoundedIcon />
+          <div className="labels">
+            <p>{weatherData.cloudCoverage} %</p>
+            <p>Cloudage</p>
+          </div>
+        </div>
+
+        <div className="col">
+          <HumidityIcon />
+          <div className="labels">
+            <p>{weatherData.humidity} %</p>
+            <p>Humidity</p>
+          </div>
+        </div>
+
+        <div className="col">
+          <WindSpeedIcon />
+          <div className="labels">
+            <p>{weatherData.windSpeed} km/h</p>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
+// most likely can't use due to space constraints:
+// <p>{weatherData.visibility} km</p>
 
+// other layout option:
 //   <div className="icon-col">
 //     <img
 //       src={weatherData.icon}
