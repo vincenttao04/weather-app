@@ -19,24 +19,24 @@ const OneDayWeather = ({ weatherData }) => {
           />
         </div>
 
-        <div className="main-temp-col">
+        <div className="temp-col">
           <p className="one-day-temp">{weatherData.temperature}°C</p>
           <p className="feels-like">
             Feels Like: {weatherData.feelsLikeTemp}°C
           </p>
         </div>
 
-        <div className="min-max-col">
+        {/* <div className="min-max-col">
           <p>Min: {weatherData.minTemperature}°C</p>
           <p>Max: {weatherData.maxTemperature}°C</p>
-        </div>
+        </div> */}
       </div>
 
       <p className="one-day-date">{weatherData.date}</p>
 
       <div className="bottom-wrapper">
         <div className="col">
-          <FilterDramaRoundedIcon />
+          <FilterDramaRoundedIcon fontSize="large" />
           <div className="labels">
             <p>{weatherData.cloudCoverage} %</p>
             <p>Cloudage</p>
@@ -44,7 +44,7 @@ const OneDayWeather = ({ weatherData }) => {
         </div>
 
         <div className="col">
-          <HumidityIcon />
+          <HumidityIcon fontSize="large" />
           <div className="labels">
             <p>{weatherData.humidity} %</p>
             <p>Humidity</p>
@@ -52,7 +52,7 @@ const OneDayWeather = ({ weatherData }) => {
         </div>
 
         <div className="col">
-          <WindSpeedIcon />
+          <WindSpeedIcon fontSize="large" />
           <div className="labels">
             <p>{weatherData.windSpeed} km/h</p>
             <p>Wind Speed</p>
@@ -62,30 +62,5 @@ const OneDayWeather = ({ weatherData }) => {
     </div>
   );
 };
-// most likely can't use due to space constraints:
-// <p>{weatherData.visibility} km</p>
-
-// other layout option:
-//   <div className="icon-col">
-//     <img
-//       src={weatherData.icon}
-//       alt="One Day Weather Icon"
-//       className="one-day-weather-icon"
-//     />
-//   </div>
-//   <div className="temp-col">
-//     <div className="temp-wrapper">
-//       <div className="main-temp">
-//         <p className="one-day-temp">{weatherData.temperature}°C</p>
-//         <p>Feels Like:{weatherData.feelsLikeTemp}°C</p>
-//       </div>
-
-//       <div className="other-temp">
-//         <p>Min:{weatherData.minTemperature}°C</p>
-//         <p>Max:{weatherData.maxTemperature}°C</p>
-//       </div>
-//     </div>
-//   </div>
-// </div>
 
 export default OneDayWeather;
