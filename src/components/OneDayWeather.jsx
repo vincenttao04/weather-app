@@ -17,10 +17,13 @@ const OneDayWeather = ({ weatherData }) => {
             alt="One Day Weather Icon"
             className="one-day-weather-icon"
           />
+          <p className="one-day-weather-des">{weatherData.description}</p>
         </div>
 
         <div className="temp-col">
-          <p className="one-day-temp">{weatherData.temperature}°C</p>
+          <div className="temp-center">
+            <p className="one-day-temp">{weatherData.temperature}°C</p>
+          </div>
           <p className="feels-like">
             Feels Like: {weatherData.feelsLikeTemp}°C
           </p>

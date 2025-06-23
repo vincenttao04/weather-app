@@ -53,11 +53,15 @@ const App = () => {
       date: moment.unix(data.list[index]?.dt).format("dddd D MMMM"),
 
       // Used by OneDayWeather component only
-      minTemperature: Math.round(data.list[index]?.main.temp_min),
-      maxTemperature: Math.round(data.list[index]?.main.temp_max),
+      minTemperature: Math.round(data.list[index]?.main.temp_min), // remove?
+      maxTemperature: Math.round(data.list[index]?.main.temp_max), // remove?
       feelsLikeTemp: Math.round(data.list[index]?.main.feels_like),
       visibility: Math.ceil(data.list[index]?.visibility / 1000),
       cloudCoverage: data.list[index]?.clouds.all,
+      description: data.list[index]?.weather[0].description.replace(
+        /\b\w/g,
+        (c) => c.toUpperCase()
+      ),
     }));
 
     setWeatherData(formattedData);
