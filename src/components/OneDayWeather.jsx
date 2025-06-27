@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "../styles/one-day-data.css";
 import WindSpeedIcon from "@mui/icons-material/AirRounded";
 import HumidityIcon from "@mui/icons-material/WaterRounded";
@@ -7,6 +7,13 @@ import { useTheme } from "@mui/material";
 
 const OneDayWeather = ({ weatherData }) => {
   const theme = useTheme();
+
+  useEffect(() => {
+    document.documentElement.style.setProperty(
+      "--text-secondary",
+      theme.palette.text.secondary
+    );
+  }, [theme]);
 
   return (
     <div className="parent-wrapper">
@@ -28,18 +35,16 @@ const OneDayWeather = ({ weatherData }) => {
             Feels Like: {weatherData.feelsLikeTemp}°C
           </p>
         </div>
-
-        {/* <div className="min-max-col">
-          <p>Min: {weatherData.minTemperature}°C</p>
-          <p>Max: {weatherData.maxTemperature}°C</p>
-        </div> */}
       </div>
 
       <p className="one-day-date">{weatherData.date}</p>
 
       <div className="bottom-wrapper">
         <div className="col">
-          <FilterDramaRoundedIcon fontSize="large" />
+          <FilterDramaRoundedIcon
+            fontSize="large"
+            sx={{ color: theme.palette.text.secondary }}
+          />
           <div className="labels">
             <p>{weatherData.cloudCoverage} %</p>
             <p>Cloudage</p>
@@ -47,7 +52,10 @@ const OneDayWeather = ({ weatherData }) => {
         </div>
 
         <div className="col">
-          <HumidityIcon fontSize="large" />
+          <HumidityIcon
+            fontSize="large"
+            sx={{ color: theme.palette.text.secondary }}
+          />
           <div className="labels">
             <p>{weatherData.humidity} %</p>
             <p>Humidity</p>
@@ -55,7 +63,10 @@ const OneDayWeather = ({ weatherData }) => {
         </div>
 
         <div className="col">
-          <WindSpeedIcon fontSize="large" />
+          <WindSpeedIcon
+            fontSize="large"
+            sx={{ color: theme.palette.text.secondary }}
+          />
           <div className="labels">
             <p>{weatherData.windSpeed} km/h</p>
             <p>Wind Speed</p>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "../styles/three-day-data.css";
 import WindSpeedIcon from "@mui/icons-material/AirRounded";
 import HumidityIcon from "@mui/icons-material/WaterRounded";
