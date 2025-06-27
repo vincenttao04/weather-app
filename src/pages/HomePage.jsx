@@ -1,5 +1,5 @@
 // React import
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // External library imports
 import { ThemeProvider } from "@mui/material/styles";
@@ -27,7 +27,7 @@ import "../styles/weather.css";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [view, setView] = useState("three-day");
+  const [view, setView] = useState("one-day");
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
@@ -41,7 +41,6 @@ const App = () => {
       return;
     }
 
-    // TODO: REFACTOR SO THAT IT ONLY STORES ONE DAY WEATHER COMPONENT DATA ONLY FOR FIRST DAY
     const forecastIndexes = [0, 8, 16]; // Current day, tomorrow, 2 days from now
     const formattedData = forecastIndexes.map((index) => ({
       humidity: data.list[index]?.main.humidity,
@@ -52,16 +51,16 @@ const App = () => {
         weatherIcons[data.list[index]?.weather[0]?.icon] || weatherIcons["01d"],
       date: moment.unix(data.list[index]?.dt).format("dddd D MMMM"),
 
-      // Used by OneDayWeather component only
-      minTemperature: Math.round(data.list[index]?.main.temp_min), // remove?
-      maxTemperature: Math.round(data.list[index]?.main.temp_max), // remove?
-      feelsLikeTemp: Math.round(data.list[index]?.main.feels_like),
-      visibility: Math.ceil(data.list[index]?.visibility / 1000),
-      cloudCoverage: data.list[index]?.clouds.all,
-      description: data.list[index]?.weather[0].description.replace(
-        /\b\w/g,
-        (c) => c.toUpperCase()
-      ),
+      // Used by OneDayWeather component only (populated on index 0 only)
+      feelsLikeTemp:
+        index === 0 ? Math.round(data.list[index]?.main.feels_like) : null,
+      cloudCoverage: index === 0 ? data.list[index]?.clouds.all : null,
+      description:
+        index === 0
+          ? data.list[index]?.weather[0].description.replace(/\b\w/g, (c) =>
+              c.toUpperCase()
+            )
+          : null,
     }));
 
     setWeatherData(formattedData);
@@ -85,17 +84,17 @@ const App = () => {
             view === "three-day" ? "between" : "center"
           }`}
         >
-          {view === "three-day" ? (
-            weatherData.map((data, index) => (
-              <Paper className="three-day" key={index} elevation={0}>
-                <ThreeDayWeather weatherData={data} />
-              </Paper>
-            ))
-          ) : (
-            <Paper className="one-day" elevation={0}>
-              <OneDayWeather weatherData={weatherData[0]} />
-            </Paper>
-          )}
+          {view === "three-day"
+            ? weatherData.map((data, index) => (
+                <Paper className="three-day" key={index} elevation={0}>
+                  <ThreeDayWeather weatherData={data} />
+                </Paper>
+              ))
+            : weatherData[0] && (
+                <Paper className="one-day" elevation={0}>
+                  <OneDayWeather weatherData={weatherData[0]} />
+                </Paper>
+              )}
         </div>
         <div className="location">
           {weatherData.length > 0 && weatherData[0].location}
@@ -112,10 +111,3 @@ const App = () => {
 };
 
 export default App;
-
-// <p>one day view coming soon</p>
-// <p>
-//   Current weather in {oneDayWeatherData.location}:{" "}
-//   {oneDayWeatherData.temperature}°C, windspeed:{" "}
-//   {oneDayWeatherData.windSpeed} km/h
-// </p>

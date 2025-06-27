@@ -13,12 +13,12 @@
 }
 
 .one-day-weather-icon {
-  width: 150px;
+  width: 170px;
 }
 
 .one-day-weather-des {
   text-align: center;
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 460;
   margin-top: 0.5rem;
 }
@@ -47,7 +47,7 @@
 }
 
 .feels-like {
-  font-size: 22px;
+  font-size: 21px;
   font-weight: 460;
 }
 

@@ -1,9 +1,14 @@
+// React import
 import { useEffect } from "react";
-import "../styles/one-day-data.css";
-import WindSpeedIcon from "@mui/icons-material/AirRounded";
-import HumidityIcon from "@mui/icons-material/WaterRounded";
-import FilterDramaRoundedIcon from "@mui/icons-material/FilterDramaRounded";
+
+// External library imports
 import { useTheme } from "@mui/material";
+import FilterDramaRoundedIcon from "@mui/icons-material/FilterDramaRounded";
+import HumidityIcon from "@mui/icons-material/WaterRounded";
+import WindSpeedIcon from "@mui/icons-material/AirRounded";
+
+// CSS imports
+import "../styles/one-day-data.css";
 
 const OneDayWeather = ({ weatherData }) => {
   const theme = useTheme();

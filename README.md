@@ -63,6 +63,12 @@ Next PR / Branch Development:
 
 Todo:
 
-- clear/simplify css - remove redundant lines
-- refactor css, make names more readable to 3/1 day views
+do now:
+
+- clear/simplify css - remove redundant lines (do this branch)
+- refactor css, make names more readable to 3/1 day views (do this branch)
+- change image width to height to stop components from moving around slightly (do this branch)
+
 - make h1 to h6, etc.
+- hover colour on 3/1 day view toggle and search bar
+- move view toggle down slightly

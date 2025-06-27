@@ -1,8 +1,13 @@
+// React import
 import { useEffect } from "react";
-import "../styles/three-day-data.css";
-import WindSpeedIcon from "@mui/icons-material/AirRounded";
-import HumidityIcon from "@mui/icons-material/WaterRounded";
+
+// External library imports
 import { useTheme } from "@mui/material";
+import HumidityIcon from "@mui/icons-material/WaterRounded";
+import WindSpeedIcon from "@mui/icons-material/AirRounded";
+
+// CSS imports
+import "../styles/three-day-data.css";
 
 const ThreeDayWeather = ({ weatherData }) => {
   const theme = useTheme();
