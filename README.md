@@ -34,35 +34,3 @@ VITE_APP_ID=your_api_key
 ```sh
 npm run dev
 ```
-
-## Improvement Ideas
-
-#### Small Ideas:
-
-- Flexible text size incase of long text
-- Make weather icon sizes consistent with each other
-- Fix error message up positioning (make it drop from the top of the screen)
-- Try out other APIs? Maybe one for flags?
-
-#### Big Ideas:
-
-- Add visibility / cloud coverage / precipitation metrics to weather card (test on Figma)
-- AI-generated weather summary / clothing recommendations (text-based)
-- Unit, component, integration testing (vitest?)
-- Add animation / motion transition to error messages
-
-Current PR / Branch Development:
-
-- Implement a one day view
-- Sort out the layout and position of layouts
-- Finalise the css styling of the one day view and the view toggle
-
-Next PR / Branch Development:
-
-- Use OpenAI's GPT API to generate human readable weather summaries based on raw weather data and display it into the one day view
-
-Todo:
-
-do now:
-
-- move view toggle down slightly
