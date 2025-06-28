@@ -65,6 +65,4 @@ Todo:
 
 do now:
 
-- hover colour on 3/1 day view toggle and search bar
 - move view toggle down slightly
-- change blacks/whites

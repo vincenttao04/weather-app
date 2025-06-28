@@ -13,8 +13,8 @@ export const darkTheme = createTheme({
       secondary: "#b0b692",
     },
     hover: {
-      primary: "#76541C",
-      secondary: "#3C3325",
+      primary: "#60481F",
+      secondary: "#312D27",
     },
   },
   typography: {
