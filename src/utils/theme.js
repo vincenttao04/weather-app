@@ -12,6 +12,10 @@ export const darkTheme = createTheme({
       primary: "#ffffff",
       secondary: "#b0b692",
     },
+    hover: {
+      primary: "#76541C",
+      secondary: "#3C3325",
+    },
   },
   typography: {
     fontFamily: '"Montserrat", sans-serif',
@@ -29,6 +33,10 @@ export const lightTheme = createTheme({
     text: {
       primary: "#000000",
       secondary: "#448289",
+    },
+    hover: {
+      primary: "#B6DDFC",
+      secondary: "#E2EBF3",
     },
   },
   typography: {

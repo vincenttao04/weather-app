@@ -40,6 +40,12 @@ const ViewToggle = ({ view, setView }) => {
                 view === viewType
                   ? theme.palette.text.secondary
                   : theme.palette.background.default,
+              "&:hover":
+                view === viewType
+                  ? null
+                  : {
+                      color: theme.palette.hover.primary,
+                    },
             }}
             onClick={() => setView(viewType)}
           />
