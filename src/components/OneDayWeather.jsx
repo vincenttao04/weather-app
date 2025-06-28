@@ -52,7 +52,7 @@ const OneDayWeather = ({ weatherData }) => {
           />
           <div className="labels">
             <p>{weatherData.cloudCoverage} %</p>
-            <p>Cloudage</p>
+            <span>Cloudage</span>
           </div>
         </div>
 
@@ -63,7 +63,7 @@ const OneDayWeather = ({ weatherData }) => {
           />
           <div className="labels">
             <p>{weatherData.humidity} %</p>
-            <p>Humidity</p>
+            <span>Humidity</span>
           </div>
         </div>
 
@@ -74,7 +74,7 @@ const OneDayWeather = ({ weatherData }) => {
           />
           <div className="labels">
             <p>{weatherData.windSpeed} km/h</p>
-            <p>Wind Speed</p>
+            <span>Wind Speed</span>
           </div>
         </div>
       </div>

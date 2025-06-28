@@ -1,10 +1,10 @@
-.weather-icon {
+.three-day-weather-icon {
   height: 150px;
   margin-top: 12px;
   margin-bottom: 20px;
 }
 
-.temperature {
+.three-day-temp {
   color: var(--text-secondary);
   font-size: 50px;
   line-height: 1;
@@ -17,7 +17,7 @@
   overflow: hidden;
 }
 
-.date {
+.three-day-date {
   font-size: 20px;
   font-weight: 600;
   width: 100%;
@@ -48,14 +48,11 @@
 .three-day-data .col .labels span {
   font-size: 12px;
   font-weight: 450;
-  margin-top: 3px;
 }
 
 .three-day-data .col .labels {
   color: var(--text-secondary);
   margin-left: 8px;
-  flex: 1;
-  min-width: 0;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;

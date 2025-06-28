@@ -21,9 +21,13 @@ const ThreeDayWeather = ({ weatherData }) => {
 
   return (
     <>
-      <img src={weatherData.icon} alt="Weather Icon" className="weather-icon" />
-      <p className="temperature">{weatherData.temperature}°C</p>
-      <p className="date">{weatherData.date}</p>
+      <img
+        src={weatherData.icon}
+        alt="Three Day Weather Icon"
+        className="three-day-weather-icon"
+      />
+      <p className="three-day-temp">{weatherData.temperature}°C</p>
+      <p className="three-day-date">{weatherData.date}</p>
       <div className="three-day-data">
         <div className="col">
           <HumidityIcon
