@@ -22,9 +22,8 @@ const Error = ({ message, onClose }) => {
     <Box
       sx={{
         position: "absolute",
-        top: "25px",
-        left: "50%",
-        transform: "translateX(-50%)",
+        top: "30px",
+        right: "40px",
         zIndex: 1000,
         width: "auto",
         maxWidth: "35%",
