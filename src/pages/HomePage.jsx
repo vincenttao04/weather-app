@@ -15,6 +15,7 @@ import { darkTheme, lightTheme } from "../utils/theme";
 import weatherIcons from "../utils/weatherIcons.js";
 
 // Component imports
+import Attribution from "../components/Attribution.jsx";
 import Error from "../components/Error.jsx";
 import OneDayWeather from "../components/OneDayWeather.jsx";
 import SearchBar from "../components/SearchBar.jsx";
@@ -105,6 +106,7 @@ const App = () => {
           search={(city) => searchCity(city)}
         />
         <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+        <Attribution />
       </div>
     </ThemeProvider>
   );
