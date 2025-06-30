@@ -50,3 +50,21 @@ npm run dev
 - AI-generated weather summary / clothing recommendations (text-based)
 - Unit, component, integration testing (vitest?)
 - Add animation / motion transition to error messages
+
+Current PR / Branch Development:
+
+- Implement a one day view
+- Sort out the layout and position of layouts
+- Finalise the css styling of the one day view and the view toggle
+
+Next PR / Branch Development:
+
+- Use OpenAI's GPT API to generate human readable weather summaries based on raw weather data and display it into the one day view
+
+Todo:
+
+do now:
+
+- hover colour on 3/1 day view toggle and search bar
+- move view toggle down slightly
+- change blacks/whites

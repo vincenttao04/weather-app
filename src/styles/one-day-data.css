@@ -1,0 +1,87 @@
+.parent-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.top-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.one-day-weather-icon {
+  height: 170px;
+}
+
+.one-day-weather-des {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 460;
+  margin-top: 0.5rem;
+}
+
+.temp-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  text-align: right;
+}
+
+.temp-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.one-day-temp {
+  color: var(--text-secondary);
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.feels-like {
+  font-size: 21px;
+  font-weight: 460;
+}
+
+.one-day-date {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.bottom-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-wrapper .col {
+  display: flex;
+  align-items: center;
+}
+
+.bottom-wrapper .col .labels p {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.bottom-wrapper .col .labels span {
+  font-size: 13.5px;
+  font-weight: 450;
+  margin-top: 3px;
+}
+
+.bottom-wrapper .col .labels {
+  color: var(--text-secondary);
+  margin-left: 8px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

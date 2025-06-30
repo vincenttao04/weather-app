@@ -1,10 +1,15 @@
-import React, { useEffect } from "react";
-import "../styles/weather-data.css";
-import WindSpeedIcon from "@mui/icons-material/AirRounded";
-import HumidityIcon from "@mui/icons-material/WaterRounded";
-import { useTheme } from "@mui/material";
+// React import
+import { useEffect } from "react";
 
-const WeatherData = ({ weatherData }) => {
+// External library imports
+import { useTheme } from "@mui/material";
+import HumidityIcon from "@mui/icons-material/WaterRounded";
+import WindSpeedIcon from "@mui/icons-material/AirRounded";
+
+// CSS imports
+import "../styles/three-day-data.css";
+
+const ThreeDayWeather = ({ weatherData }) => {
   const theme = useTheme();
 
   useEffect(() => {
@@ -16,10 +21,14 @@ const WeatherData = ({ weatherData }) => {
 
   return (
     <>
-      <img src={weatherData.icon} alt="Weather Icon" className="weather-icon" />
-      <p className="temperature">{weatherData.temperature}°C</p>
-      <p className="date">{weatherData.date}</p>
-      <div className="weather-data">
+      <img
+        src={weatherData.icon}
+        alt="Three Day Weather Icon"
+        className="three-day-weather-icon"
+      />
+      <p className="three-day-temp">{weatherData.temperature}°C</p>
+      <p className="three-day-date">{weatherData.date}</p>
+      <div className="three-day-data">
         <div className="col">
           <HumidityIcon
             fontSize="large"
@@ -45,4 +54,4 @@ const WeatherData = ({ weatherData }) => {
   );
 };
 
-export default WeatherData;
+export default ThreeDayWeather;

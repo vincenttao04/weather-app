@@ -1,5 +1,5 @@
 // React import
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 // External library imports
 import { ThemeProvider } from "@mui/material/styles";
@@ -16,9 +16,10 @@ import weatherIcons from "../utils/weatherIcons.js";
 
 // Component imports
 import Error from "../components/Error.jsx";
+import OneDayWeather from "../components/OneDayWeather.jsx";
 import SearchBar from "../components/SearchBar.jsx";
 import ThemeToggle from "../components/ThemeToggle.jsx";
-import WeatherData from "../components/WeatherData.jsx";
+import ThreeDayWeather from "../components/ThreeDayWeather.jsx";
 import ViewToggle from "../components/ViewToggle.jsx";
 
 // CSS imports
@@ -26,12 +27,13 @@ import "../styles/weather.css";
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [view, setView] = useState("three-day");
-  const [weatherData, setWeatherData] = useState([]);
+  const [view, setView] = useState("one-day");
   const [inputValue, setInputValue] = useState("");
   const [error, setError] = useState("");
 
-  const search = async (city) => {
+  const [weatherData, setWeatherData] = useState([]);
+
+  const searchCity = async (city) => {
     const { data, error } = await fetchWeather(city); // Call Openweather API
 
     if (!data) {
@@ -48,6 +50,17 @@ const App = () => {
       icon:
         weatherIcons[data.list[index]?.weather[0]?.icon] || weatherIcons["01d"],
       date: moment.unix(data.list[index]?.dt).format("dddd D MMMM"),
+
+      // Used by OneDayWeather component only (populated on index 0 only)
+      feelsLikeTemp:
+        index === 0 ? Math.round(data.list[index]?.main.feels_like) : null,
+      cloudCoverage: index === 0 ? data.list[index]?.clouds.all : null,
+      description:
+        index === 0
+          ? data.list[index]?.weather[0].description.replace(/\b\w/g, (c) =>
+              c.toUpperCase()
+            )
+          : null,
     }));
 
     setWeatherData(formattedData);
@@ -57,7 +70,7 @@ const App = () => {
 
   // First city search
   useEffect(() => {
-    search("Auckland");
+    searchCity("Auckland");
   }, []);
 
   return (
@@ -66,24 +79,30 @@ const App = () => {
       <div className="root-container">
         <Error message={error} onClose={() => setError("")} />
         <ViewToggle view={view} setView={setView} />
-        <div className="weather-wrapper">
-          {view === "three-day" ? (
-            weatherData.map((data, index) => (
-              <Paper className="weather" key={index} elevation={0}>
-                <WeatherData weatherData={data} />
-              </Paper>
-            ))
-          ) : (
-            <p>one day view coming soon</p>
-          )}
+        <div
+          className={`weather-wrapper ${
+            view === "three-day" ? "between" : "center"
+          }`}
+        >
+          {view === "three-day"
+            ? weatherData.map((data, index) => (
+                <Paper className="three-day" key={index} elevation={0}>
+                  <ThreeDayWeather weatherData={data} />
+                </Paper>
+              ))
+            : weatherData[0] && (
+                <Paper className="one-day" elevation={0}>
+                  <OneDayWeather weatherData={weatherData[0]} />
+                </Paper>
+              )}
         </div>
-        {weatherData.length > 0 && (
-          <div className="location">{weatherData[0].location}</div>
-        )}
+        <div className="location">
+          {weatherData.length > 0 && weatherData[0].location}
+        </div>
         <SearchBar
           inputValue={inputValue}
           setInputValue={setInputValue}
-          search={search}
+          search={(city) => searchCity(city)}
         />
         <ThemeToggle isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
       </div>

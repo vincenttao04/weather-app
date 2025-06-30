@@ -24,9 +24,9 @@ const ViewToggle = ({ view, setView }) => {
         display: "flex",
         flexDirection: "row",
         gap: "10px",
-        outline: "1px solid white",
-        padding: "10px",
-        borderRadius: "5px",
+        padding: "10px 14px",
+        borderRadius: "28px",
+        backgroundColor: theme.palette.background.paper,
       }}
     >
       {iconConfigs.map(({ Icon, viewType }) => {
@@ -36,8 +36,10 @@ const ViewToggle = ({ view, setView }) => {
             key={viewType}
             sx={{
               cursor: "pointer",
-              color: theme.palette.text.secondary,
-              backgroundColor: view === viewType ? "white" : "transparent",
+              color:
+                view === viewType
+                  ? theme.palette.text.secondary
+                  : theme.palette.background.default,
             }}
             onClick={() => setView(viewType)}
           />
