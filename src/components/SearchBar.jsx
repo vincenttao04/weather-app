@@ -107,6 +107,9 @@ function SearchBar({ inputValue, setInputValue, search }) {
         "& .MuiOutlinedInput-root": {
           borderRadius: "25px",
           height: "50px",
+          "&:hover": {
+            backgroundColor: theme.palette.hover.secondary,
+          },
         },
         "& .MuiInputBase-input::placeholder": {
           color: theme.palette.text.secondary, // Placeholder text

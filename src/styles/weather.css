@@ -11,7 +11,7 @@
 .weather-wrapper {
   display: flex;
   width: 1080px;
-  margin-top: 50px;
+  margin-top: 17px;
 }
 
 .weather-wrapper.center {

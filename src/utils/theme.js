@@ -9,8 +9,12 @@ export const darkTheme = createTheme({
       textfield: "#282828",
     },
     text: {
-      primary: "#ffffff",
+      primary: "#DEDEDE",
       secondary: "#b0b692",
+    },
+    hover: {
+      primary: "#60481F",
+      secondary: "#312D27",
     },
   },
   typography: {
@@ -27,8 +31,12 @@ export const lightTheme = createTheme({
       textfield: "#f0f0f0",
     },
     text: {
-      primary: "#000000",
+      primary: "#393939",
       secondary: "#448289",
+    },
+    hover: {
+      primary: "#B6DDFC",
+      secondary: "#E2EBF3",
     },
   },
   typography: {

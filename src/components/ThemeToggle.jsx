@@ -13,8 +13,8 @@ const ThemeToggle = ({ isDarkMode, setIsDarkMode }) => {
       sx={{
         alignItems: "center",
         position: "absolute",
-        bottom: "20px",
-        right: "20px",
+        bottom: "30px",
+        right: "40px",
       }}
     >
       <LightModeIcon sx={{ color: theme.palette.text.secondary }} />
