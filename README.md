@@ -4,17 +4,17 @@
 
 - [Overview](#overview)
 - [Demo](#demo)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-  - [Prerequisites](#-prerequisites)
-  - [Clone the Repository \& Install Dependencies](#-clone-the-repository--install-dependencies)
-  - [API Configuration](#-api-configuration)
-  - [Run in Development Mode](#-run-in-development-mode)
-- [TODO / Future Improvements](#-todo--future-improvements)
-- [License](#-license)
-- [Author](#-author)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Clone the Repository \& Install Dependencies](#clone-the-repository--install-dependencies)
+  - [API Configuration](#api-configuration)
+  - [Run in Development Mode](#run-in-development-mode)
+- [TODO / Future Improvements](#todo--future-improvements)
+- [License](#license)
+- [Author](#author)
 
 ## Overview
 
