@@ -22,9 +22,12 @@ A simple and responsive weather application built with **JavaScript** and **Reac
 
 ## Demo
 
+![Demo](./src/assets/demo/demo.gif)
+
 ## Features
 
 - Search current weather by city, state, or country name
+- Search using voice
 - Displays temperature, humidity, wind speed, and other weather conditions
 - Dynamic icons/images based on weather conditions
 - Graceful handling of invalid city, state, or country names
