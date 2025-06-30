@@ -2,9 +2,7 @@
 import { useState } from "react";
 
 // External library imports
-import { useTheme } from "@mui/material";
-import InputAdornment from "@mui/material/InputAdornment";
-import TextField from "@mui/material/TextField";
+import { useTheme, InputAdornment, TextField } from "@mui/material";
 import MicIcon from "@mui/icons-material/MicRounded";
 import SearchIcon from "@mui/icons-material/SearchRounded";
 

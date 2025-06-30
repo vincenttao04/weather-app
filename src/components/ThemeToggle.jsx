@@ -1,6 +1,5 @@
 // External library imports
-import { Stack, useTheme } from "@mui/material";
-import Switch from "@mui/material/Switch";
+import { Stack, Switch, useTheme } from "@mui/material";
 import DarkModeIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeIcon from "@mui/icons-material/LightModeRounded";
 

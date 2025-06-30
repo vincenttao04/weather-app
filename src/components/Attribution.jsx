@@ -1,5 +1,6 @@
-import { SiJavascript, SiReact } from "react-icons/si";
+// External library imports
 import { Stack, useTheme } from "@mui/material";
+import { SiJavascript, SiReact } from "react-icons/si";
 
 const Attribution = () => {
   const theme = useTheme();
@@ -17,7 +18,6 @@ const Attribution = () => {
     >
       <p>Vincent Tao |</p>
       <SiJavascript size={20} style={{ marginLeft: "6px" }} />
-      {/* <AddRoundedIcon fontSize={"small"} sx={{ mr: 0.5, ml: 0.5 }} /> */}
       <p style={{ padding: "0px 4px", fontSize: "22px" }}>+</p>
       <SiReact size={20} />
     </Stack>
