@@ -11,7 +11,7 @@ const Attribution = () => {
       sx={{
         alignItems: "center",
         position: "absolute",
-        bottom: "36px",
+        bottom: "33px",
         left: "42px",
         color: theme.palette.text.secondary,
       }}
