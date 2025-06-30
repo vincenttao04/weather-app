@@ -12,6 +12,8 @@
   - [🔑 API Configuration](#🔑-api-configuration)
   - [🏃 Run in Development Mode](#🏃-run-in-development-mode)
 - [📌 TODO / Future Improvements](#📌-todo--future-improvements)
+- [📄 License](#📄-license)
+- [🙋‍♂️ Author](#🙋‍♂️-author)
 
 ## Overview
 
@@ -23,7 +25,7 @@ A simple and responsive weather application built with **JavaScript** and **Reac
 - 🌡️ Displays temperature, humidity, wind speed, and other weather conditions
 - 📸 Dynamic icons/images based on weather conditions
 - ❌ Graceful handling of invalid city, state, or country names
-- 📱 Fully responsive design for desktop and laptop screens with light and dark mode support
+- 🖥️ Fully responsive design for desktop and laptop screens with light and dark mode support
 
 ## 📦 Tech Stack
 
@@ -52,16 +54,17 @@ weather-app/
 ├── src/
 │   ├── assets/                             # Weather icons/images
 │   ├── components/                         # Reusable React components
-|   ├── pages/
+│   ├── pages/
 │   │   └── HomePage.jsx                    # Main landing page with weather UI
-|   ├── services/
+│   ├── services/
 │   │   └── weatherApiService.js            # Handles API calls to OpenWeatherMap
-|   ├── styles/                             # Modular CSS stylesheet
-|   ├── utils/                              # Utility functions
+│   ├── styles/                             # Modular CSS stylesheet
+│   ├── utils/                              # Utility functions
 │   ├── main.jsx                            # App entry point
 │   └── index.css                           # Global CSS stylesheet
 ├── .env                                    # Environment variables (API key)
 ├── index.html                              # HTML template used by Vite
+├── LICENSE                                 # MIT License
 ├── package.json                            # Dependencies & scripts
 ├── vite.config.js                          # Vite configuration
 └── README.md
@@ -132,3 +135,12 @@ http://localhost:5173
 - 5-day and weekly forecast
 - Name suggestions (city, state, or country) as users type
 - Clear, human-readable descriptions of weather conditions based on raw weather data
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙋‍♂️ Author
+
+Vincent Tao  
+[GitHub Profile](https://github.com/vincenttao04)
