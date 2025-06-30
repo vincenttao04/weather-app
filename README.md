@@ -1,33 +1,36 @@
 # Weather App ☀️🌧️🌩️
 
-## 📚 Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
-- [🧠 Features](#🧠-features)
-- [📦 Tech Stack](#📦-tech-stack)
-- [🔧 Project Structure](#🔧-project-structure)
-- [🚀 Getting Started](#🚀-getting-started)
-  - [📋 Prerequisites](#📋-prerequisites)
-  - [🛠️ Clone the Repository \& Install Dependencies](#🛠️-clone-the-repository--install-dependencies)
-  - [🔑 API Configuration](#🔑-api-configuration)
-  - [🏃 Run in Development Mode](#🏃-run-in-development-mode)
-- [📌 TODO / Future Improvements](#📌-todo--future-improvements)
-- [📄 License](#📄-license)
-- [🙋‍♂️ Author](#🙋‍♂️-author)
+- [Demo](#demo)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+  - [Prerequisites](#-prerequisites)
+  - [Clone the Repository \& Install Dependencies](#-clone-the-repository--install-dependencies)
+  - [API Configuration](#-api-configuration)
+  - [Run in Development Mode](#-run-in-development-mode)
+- [TODO / Future Improvements](#-todo--future-improvements)
+- [License](#-license)
+- [Author](#-author)
 
 ## Overview
 
 A simple and responsive weather application built with **JavaScript** and **React**. This app fetches real-time weather data based on user input and displays key weather parameters in a clean, visually appealing UI.
 
-## 🧠 Features
+## Demo
 
-- 🌍 Search current weather by city, state, or country name
-- 🌡️ Displays temperature, humidity, wind speed, and other weather conditions
-- 📸 Dynamic icons/images based on weather conditions
-- ❌ Graceful handling of invalid city, state, or country names
-- 🖥️ Fully responsive design for desktop and laptop screens with light and dark mode support
+## Features
 
-## 📦 Tech Stack
+- Search current weather by city, state, or country name
+- Displays temperature, humidity, wind speed, and other weather conditions
+- Dynamic icons/images based on weather conditions
+- Graceful handling of invalid city, state, or country names
+- Fully responsive design for desktop and laptop screens with light and dark mode support
+
+## Tech Stack
 
 - Frontend Framework: [React 19](https://react.dev/)
 - Build Tool: [Vite 6](https://vitejs.dev/)
@@ -47,7 +50,7 @@ A simple and responsive weather application built with **JavaScript** and **Reac
   - Vite hot module reload (HMR)
   - Type support via `@types/react` and `@types/react-dom`
 
-## 🔧 Project Structure
+## Project Structure
 
 ```plaintext
 weather-app/
@@ -70,18 +73,18 @@ weather-app/
 └── README.md
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these steps to set up and run the project locally.
 
-### 📋 Prerequisites
+### Prerequisites
 
 Make sure you have the following installed on your system:
 
 - [Node.js](https://nodejs.org/) (v18 or later recommended)
 - [npm](https://www.npmjs.com/) (comes with Node.js)
 
-### 🛠️ Clone the Repository & Install Dependencies
+### Clone the Repository & Install Dependencies
 
 1. Clone the repository:
 
@@ -101,7 +104,7 @@ cd weather-app
 npm install
 ```
 
-### 🔑 API Configuration
+### API Configuration
 
 This app uses the OpenWeatherMap API to retrieve real-time weather data.
 
@@ -115,7 +118,7 @@ This app uses the OpenWeatherMap API to retrieve real-time weather data.
 VITE_APP_ID=your_api_key
 ```
 
-### 🏃 Run in Development Mode
+### Run in Development Mode
 
 1. Start the development server (from the root directory):
 
@@ -129,18 +132,18 @@ npm run dev
 http://localhost:5173
 ```
 
-## 📌 TODO / Future Improvements
+## TODO / Future Improvements
 
 - Unit toggle (°C/°F)
 - 5-day and weekly forecast
 - Name suggestions (city, state, or country) as users type
 - Clear, human-readable descriptions of weather conditions based on raw weather data
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙋‍♂️ Author
+## Author
 
 Vincent Tao  
 [GitHub Profile](https://github.com/vincenttao04)
