@@ -1,7 +1,7 @@
-import React from "react";
-import ThreeDayIcon from "@mui/icons-material/ViewWeekRounded";
-import OneDayIcon from "@mui/icons-material/WebAssetRounded";
+// External library imports
 import { useTheme } from "@mui/material";
+import OneDayIcon from "@mui/icons-material/WebAssetRounded";
+import ThreeDayIcon from "@mui/icons-material/ViewWeekRounded";
 
 const ViewToggle = ({ view, setView }) => {
   const theme = useTheme();

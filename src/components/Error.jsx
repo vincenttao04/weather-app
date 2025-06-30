@@ -1,4 +1,7 @@
-import React, { useEffect } from "react";
+// React import
+import { useEffect } from "react";
+
+// External library imports
 import { Alert, Box, useTheme } from "@mui/material";
 
 const Error = ({ message, onClose }) => {

@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+// React import
+import { useState } from "react";
+
+// External library imports
+import { useTheme } from "@mui/material";
 import InputAdornment from "@mui/material/InputAdornment";
+import TextField from "@mui/material/TextField";
 import MicIcon from "@mui/icons-material/MicRounded";
 import SearchIcon from "@mui/icons-material/SearchRounded";
-import TextField from "@mui/material/TextField";
-import { useTheme } from "@mui/material";
 
 function SearchBar({ inputValue, setInputValue, search }) {
   const theme = useTheme();

@@ -1,8 +1,8 @@
-import React from "react";
+// External library imports
+import { Stack, useTheme } from "@mui/material";
 import Switch from "@mui/material/Switch";
 import DarkModeIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeIcon from "@mui/icons-material/LightModeRounded";
-import { Stack, useTheme } from "@mui/material";
 
 const ThemeToggle = ({ isDarkMode, setIsDarkMode }) => {
   const theme = useTheme();
