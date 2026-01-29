@@ -38,20 +38,17 @@ A simple and responsive weather application built with **JavaScript** and **Reac
 - Frontend Framework: [React 19](https://react.dev/)
 - Build Tool: [Vite 6](https://vitejs.dev/)
 - UI Components: [Material UI (MUI)](https://mui.com/)
-- Styling: [Emotion (CSS-in-JS)](https://emotion.sh/docs/introduction)
-  - `@emotion/react`
-  - `@emotion/styled`
+- Styling: [Emotion](https://emotion.sh/docs/introduction) (CSS-in-JS, used by Material UI)
 - Icons:
   - [React Icons](https://react-icons.github.io/react-icons/)
   - [MUI Icons](https://mui.com/components/material-icons/)
 - Date & Time Formatting: [Moment.js](https://momentjs.com/)
 - Linting & Code Quality:
-  - [ESLint](https://eslint.org/)
-  - `eslint-plugin-react-hooks`
-  - `eslint-plugin-react-refresh`
+  - [ESLint](https://eslint.org/) with React Hooks rules
+  - React Fast Refresh support
 - Developer Experience:
-  - Vite hot module reload (HMR)
-  - Type support via `@types/react` and `@types/react-dom`
+  - Vite Hot Module Replacement (HMR)
+  - Type definitions for improved editor IntelliSense (via `@types/react`, `@types/react-dom`)
 
 ## Project Structure
 
@@ -70,9 +67,9 @@ weather-app/
 │   └── index.css                           # Global CSS stylesheet
 ├── .env                                    # Environment variables (API key)
 ├── index.html                              # HTML template used by Vite
-├── LICENSE                                 # MIT License
 ├── package.json                            # Dependencies & scripts
 ├── vite.config.js                          # Vite configuration
+├── LICENSE
 └── README.md
 ```
 
